@@ -1,0 +1,212 @@
+<!--
+Author: Caleb Bronn
+Last Update: 19 Mar 2025
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Caleb Bronn">
+	<meta name="description" content="">
+	<meta name="keywords" content="Rosa, Otters, DougDoug, Monterey Bay Aquarium">
+	<title>Remembering Rosa</title>
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
+
+	<!-- Font Awesome, a site that provides free icons for web development.
+	 	I'm using it for stuff like the hamburger menu or the YouTube and Twitch logos.
+		The src URL is a free kit I made that provides access to all of Font Awesome's free icons.
+		Link: https://fontawesome.com/icons
+	-->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	<script src="https://kit.fontawesome.com/3b312594da.js"	crossorigin="anonymous"></script>
+
+	<!-- External jQuery link to Google's API -->
+	<!-- It's likely users will already have this stored in their cache, which improves page load speed -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+	<!-- Script for animating the hamburger menu -->
+	<script src="./js/jquery.nav_menu.js"></script>
+
+	<!-- Universal stylesheet -->
+	<link rel="stylesheet" href="css/universal.css">
+	<link rel="stylesheet" href="css/homepage.css">
+</head>
+
+<body>
+
+<!-- HAMBURGER MENU -->
+<nav class="nav-location">
+	<!-- This is a fun little "cheat". We use a checkbox for the menu so it can open 
+		and close with a click! This checkbox will not actually be visible to the user 
+		since we will place it underneath the hamburger icon. -->
+	<input type="checkbox" id="hambox" class="nav-location" onclick="switchIcon();">
+
+	<!-- Hamburger menu icon (fa-bars) from Font Awesome
+		This calss is exchanged for fa-xmark
+		See here: https://fontawesome.com/icons/bars?f=classic&s=solid -->
+	<span id="hamburger"><i class="fa fa-bars"></i></span>
+	<ul id="menu" class="hide">
+		<li>
+			<a class="fancy-link" href="#">Homepage</a>
+		</li>
+		<li>
+			<a class="fancy-link" href="#">Rosa's Story</a>
+		</li>
+		<li>
+			<a class="fancy-link" href="#">DougDoug Charity Streams</a>
+		</li>
+		<li>
+			<a class="fancy-link" href="#">Monterey Bay Aquarium</a>
+		</li>
+		<li>
+			<a class="fancy-link" href="#">Otter Facts</a>
+		</li>
+		<li>
+			<a class="fancy-link" href="#">Rosa Art</a>
+		</li>
+		<li>
+			<a class="fancy-link" href="#">More Info</a>
+		</li>
+	</ul>
+</nav>
+
+<!-- HERO PAGE -->
+<section id="hero-page">
+	<!-- Rosa background image 
+		This #shadow div applies a black shadow effect to the right side of the image -->
+	<div id="shadow">
+		<img id="rosa-main" aria-label="Rosa background image"
+			src="images/rosa_main_desktop.jpg" alt="Rosa floating in her pool, asleep">
+	</div>
+
+	<!-- This div is not part of the document flow, it just creates a black background 
+		that fades out after the ripple animation plays -->
+	<div id="fade-bg"></div>
+
+	<!-- Ripple effect container -->
+	<div id="ripple-overlay">
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+	</div>
+
+	<!-- Text container for Hero Page -->
+	<div id="hero-text">
+		<h1 class="white-fg">Re&shy;mem&shy;ber&shy;ing Rosa</h1>
+		<ul>
+			<li><a class="fancy-link" href="#chapter1-mother">Chapter 1: A Mother</a></li>
+			<li><a class="fancy-link" href="#chapter2-hero">Chapter 2: A Hero</a></li>
+			<li><a class="fancy-link" href="#chapter3-queen">Chapter 3: A Queen</a></li>
+		</ul>
+	</div>
+</section>
+
+<main role="img">
+	<h2 style="text-align: center;">Who Is Rosa?</h2>
+
+	<!-- Chapter 1: A Mother -->
+	<article id="chapter1-mother">
+		<div>
+			<h2>Rosa, Best Mom&trade;</h2>
+			<p>
+				Rosa was a crucial member of Monterey Bay Aquarium's sea otter surrogacy program &mdash; a
+				program established by staff at the aquarium to help get orphaned otter pups safely back into
+				the wild. During her tenure as a surrogate mother, Rosa adopted and raised 15 pups to adulthood,
+				all of whom were released into the wild and are now thriving in the Monterey Bay area!
+			</p>
+		</div>
+		<div>
+			<img src="images/rosa-peeking.jpg" alt="">
+		</div>
+	</article>
+
+	<!-- Chapter 2: A Hero -->
+	<article id="chapter2-hero">
+		<div>
+			<h2>Rosa Saves the Otters</h2>
+			<p>
+				The Southern Sea Otter population, once thought to be extinct, has been teetering near the brink
+				of extinction for over a century. But thanks to the tremendous efforts of incredible surrogate mothers like
+				Rosa, and wildlife conservationists like those at Monterey Bay Aquarium, the Californian population
+				has seen a boom from around 50 otters to an estimated 3,000 today!
+			</p>
+		</div>
+		<div>
+			<img src="images/rosa-peeking.jpg" alt="">
+		</div>
+	</article>
+
+	<!-- Chapter 3: A Queen -->
+	<article id="chapter3-queen">
+		<div>
+			<h2>Doug's Community Raises $100,000 for Rosa</h2>
+			<p>
+				Rosa's birthday (August 26) is celebrated every year by a Twitch streamer named <a href="https://www.twitch.tv/dougdoug">DougDoug</a>. In 2019,
+				after discovering that Rosa was the world's oldest living sea otter, Doug decided to host a charity
+				live stream for Rosa on her birthday. She quickly became an icon of his community, and the charity
+				streams kept getting bigger and bigger each year. In total, the DougDoug community has raised over
+				<em>1 million dollars</em> for their Queen Rosa and the Monterey Bay Aquarium!
+			</p>
+		</div>
+		<div>
+			<img src="images/rosa-peeking.jpg" alt="">
+		</div>
+	</article>
+</main>
+
+<!-- Footer -->
+<footer>
+	<h3 class="white-fg">DougDoug Community</h3>
+	
+	<!-- DougDoug's Twitch Channel -->
+	<a id="twitch" class="white-bg"  href="https://www.twitch.tv/dougdoug" target="_blank">
+		<!-- Twitch icon from Font Awesome -->
+		<i class="fa-brands fa-twitch fa-xl" aria-hidden="true" role="img"></i>Doug&shy;Doug on Twitch
+	</a>
+	
+	<!-- DougDoug's YouTube Channel -->
+	<a id="yt" class="white-bg"  href="https://www.youtube.com/user/Gloudas"target="_blank">
+		<!-- YouTube icon from Font Awesome -->
+		<i class="fa fa-youtube-play fa-xl" aria-hidden="true" role="img"></i>Doug&shy;Doug on YouTube
+	</a>
+
+	<h3 class="white-fg">Monterey Bay Aquarium</h3>
+	
+	<!-- Monterey Bay Aquarium -->
+	<a id="mba" class="white-bg" href="https://www.montereybayaquarium.org/" target="_blank">
+		<!-- Uses otter icon from Font Awesome -->
+		<i class="fa-solid fa-otter fa-xl" aria-hidden="true" role="img"></i>MBA Website
+	</a>
+
+	<!-- MBA address, links to their location on Google maps -->
+	<a id="loc" class="white-bg"
+		href="https://www.google.com/maps/dir//886+Cannery+Row,+Monterey,+CA+93940,+USA/@36.6175496,-121.9835741,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x808de401d01aa6bf:0xc9f86491056b6116!2m2!1d-121.901173!2d36.617578?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoASAFQAw%3D%3D"
+		target="_blank">
+		<address>
+			<!-- Location icon from Font Awesome -->
+			<i class="fa-solid fa-location-dot fa-xl" aria-hidden="true" role="img"></i>Where is MBA?
+		</address>
+	</a>
+
+	<!-- Disclaimers -->
+	<h4>Disclaimer:</h4>
+	<p>
+		All video clips about Doug and Doug's community are sourced from the DougDoug Youtube Channel.
+	</p>
+	<h4>Disclaimer:</h4>
+	<p>
+		All factual information about otters on this site is sourced from Monterey Bay Aquarium.
+	</p>
+
+	<!-- Copyright -->
+	<p id="copyright" class="white-text">© Caleb Bronn 2024</p>
+</footer>
+
+</body>
+
+</html>

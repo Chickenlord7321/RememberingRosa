@@ -1,0 +1,10 @@
+# ignore everything in the labs, typo, and CSS Technique folders
+labs
+typo
+css-technique
+
+# ignore stuff related to css techniques
+css_techniques*.md
+
+# ignore zip files
+*.zip

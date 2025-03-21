@@ -1,0 +1,386 @@
+/*! add header comment */
+
+/*******************
+ * RESET SYLESHEET *
+ *******************/
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body {
+	font: 400 1rem/normal "Times New Roman", Times, serif;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+img,
+video,
+iframe {
+	max-width: 100%;
+}
+
+/* <address> elements are italic by default */
+address {
+	font-style: normal;
+}
+
+/* Minimum size for interactable elements on mobile screens */
+@media screen and (max-width: 800px) {
+	a,
+	button,
+	audio,
+	iframe,
+	input,
+	textarea,
+	video {
+		min-width: 42px;
+		min-height: 42px;
+	}
+}
+
+:root {
+	/* Colors! */
+	/* This is the same blue used by MBA on their website */
+	--mba-blue: #62b6f3;
+
+	/* Specific colors for active / inactive / links / etc... */
+	--nav-bg-inactive: lightsteelblue;
+	--nav-bg-active: #122142;
+	--nav-fg-inactive: #000;
+	--nav-fg-active: #fff;
+	--ripple-color: #fff;
+	/* Fancy links */
+	--fancy-link-fg: #fff;
+	--fancy-link-bg-inactive: #fff;
+	--fancy-link-bg-active: var(--mba-blue);
+
+	/* Animation/Transition speeds! */
+	--nav-speed: 0.5s;
+
+	/* Navbar stuff! */
+	--nav-spacing: 5vmin;
+	--icon-size: 4rem;
+	--nav-radius: 1rem;
+}
+
+/* More color classes for easily applying text/background color */
+.white-bg { background-color: #fff; }
+.white-fg { color: #fff; }
+.black-bg { background-color: #000; }
+.black-fg { color: #000; }
+
+
+/***************
+ * FANCY LINKS *
+ ***************/
+
+.fancy-link {
+	--underline-size: 0.1em;
+	/* Reset stuff */
+	text-decoration: none;
+	display: block;
+
+	color: var(--fancy-link-fg);
+	padding-bottom: 0.5rem;
+	background-image: 
+		linear-gradient(to right, var(--fancy-link-bg-inactive), var(--fancy-link-bg-inactive)),
+		linear-gradient(to right, var(--fancy-link-bg-active), var(--fancy-link-bg-active));
+	background-repeat: no-repeat, no-repeat;
+	background-size: 
+		100% var(--underline-size),
+		0% var(--underline-size);
+	background-position: 
+		right bottom, 
+		left bottom;
+	transition: background-size 0.3s ease-in-out;
+}
+.fancy-link:hover {
+	background-size: 
+		0% var(--underline-size),
+		100% var(--underline-size);
+}
+
+
+/**********
+ * NAVBAR *
+ **********/
+
+.nav-location {
+	top: 0;
+	right: 0;
+	text-align: right;
+}
+
+nav {
+	margin: var(--nav-spacing);
+	/* Navbar should always be on top */
+	position: fixed;
+	z-index: 100;
+	/* We set a max width so the nav menu doesn't become so big that users 
+	can't scroll on mobile screens */
+	max-width: 50vw;
+}
+
+#menu {
+	background-color: var(--nav-bg-active);
+	font-size: 1.5rem;
+	/* Only the top right corner should be square, so it blends with the hamburger icon */
+	border-radius: var(--nav-radius) 0 var(--nav-radius) var(--nav-radius);
+
+	/* Setting the maximum height to the viewport height minus the top margin prevents 
+	the menu from going beyond the bounds of the screen. We then allow any overflowing 
+	content to scroll, which I remember was an issue from DIGI 220. */
+	max-height: calc(90vh - var(--nav-spacing) - var(--icon-size));
+	overflow-y: scroll;
+
+	/* This hides the menu until the user clicks the hamburger icon */
+	clip-path: inset(0 0 0 100%);
+	transition: all var(--nav-speed) ease-in-out;
+}
+
+/* Classes for hiding/showing the menu. Wish I could just use display: none, but it affects
+	the clip-path animation. */
+.show { height: auto; }
+.hide { height: 0; }
+
+#menu li {
+	margin: 2em 1em;
+}
+
+#hamburger {
+	background-color: var(--nav-bg-inactive);
+	color: var(--nav-fg-inactive);
+	border-radius: var(--nav-radius);
+
+	/* We use the calc() function to subtract the amount of padding from the size of the 
+	hamburger. This is an easy way to make the font responsive to any changes you make 
+	to the hamburger icon! */
+	--pad: calc(var(--icon-size) / 4);
+	padding: var(--pad);
+	font-size: calc(var(--icon-size) - 2 * var(--pad));
+	text-align: center;
+
+	/* Set width of hamburger to be the same as the checkbox */
+	display: inline-block;	/* <span> elements are inline by default, which wouldn't allow us to set a width */
+	width: var(--icon-size);
+	height: var(--icon-size);
+
+	/* Animate the colors */
+	transition: background-color var(--nav-speed) ease,
+				color var(--nav-speed) ease;
+}
+
+input#hambox {
+	/* Make the checkbox invisible and place overtop the hamburger */
+	position: absolute;
+	z-index: 2;
+	opacity: 0;
+	/* Set the checkbox to be the same size as the hamburger icon */
+	width: var(--icon-size);
+	height: var(--icon-size);
+}
+
+/* Highlight hamburger icon when the user hovers over/clicks the hamburger */
+#hambox:hover ~ #hamburger, 
+#hambox:checked ~ #hamburger {
+	background-color: var(--nav-bg-active);
+	color: var(--nav-fg-active);
+}
+
+/* Slides the menu out */
+#hambox:checked ~ #menu {
+	clip-path: inset(0 0 0 0);
+}
+
+/****************
+ * MAIN CONTENT *
+ ****************/
+
+body {
+	/* Number of columns for articles/footer */
+	--num-cols: 2;
+	background-color: #000;
+	color: #fff;
+}
+
+/* Switch to 1-column layout on devices smaller than 1000px */
+@media screen and (width < 1000px) {
+	body { --num-cols: 1; }
+}
+
+main {
+	padding: 8rem 15%;
+	background-image: url("../images/swimming-blissfully-by-ozm0th.webp");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: 50% 80%;
+}
+
+/************************************
+ * ARTICLES WITH ALTERNATING LAYOUT *
+ ************************************/
+
+article {
+	display: grid;
+	grid-template-columns: 6fr 4fr;
+	gap: 5%;
+	margin: 8rem 0;
+}
+
+article:nth-of-type(odd) {
+	grid-template-columns: 4fr 6fr;
+}
+
+/* Alternating layout on larger devices */
+@media screen and (width >= 1000px) {
+	article:nth-of-type(even) > div:first-child { order: +1; }
+}
+
+@media screen and (width < 1000px) {
+	article {
+		grid-template-columns: 1fr !important;
+	}
+}
+
+article > div {
+	position: relative;		/* for children with absolute positioning */
+	background-color: #000;
+	border-radius: 1em;
+	padding: 2em;
+}
+
+article div:first-child::before {
+	content: 'Chapter 1';
+	position: absolute;
+	top: -1em;
+	left: -1em;
+	padding: 0.5em;
+	border-radius: 0.5em;
+	font-size: 1.5rem;
+	background-color: #fff;
+	color: #000;
+}
+
+article h2 {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+article img {
+	display: block;
+}
+
+
+/**********
+ * FOOTER *
+ **********/
+
+footer {
+	padding: 40px 25%;
+	display: grid;
+	grid-template-columns: repeat(var(--num-cols), 1fr);
+	gap: 0 10%;
+	text-align: center;
+	background-color: #122142;
+}
+
+@media screen and (width < 550px) {
+	footer { padding: 40px 10%; }
+}
+
+footer > * {
+	margin-bottom: 2rem;
+}
+
+footer h3 {
+	/* Headers for button section go at the top */
+	order: -1;
+}
+
+footer a {
+	text-decoration: none;
+	padding: 1rem;
+	border-radius: 2rem;
+	font-size: 1.5rem;
+	color: #000;
+
+	width: 100%;
+	max-width: 15em;
+	justify-self: center;
+	transition: all 0.3s;
+}
+
+footer a:hover {
+	/* Defaults to Twitch colors, but we change the other buttons to have their own unique colors */
+	box-shadow: 4px 4px 0 2px #9146FF;
+	background-color: black;
+	color: white;
+}
+
+@media screen and (width >= 1000px) {
+	#twitch {
+		grid-column: 1 / span 1;
+		grid-row: 2 / span 1;
+	}
+	#yt {
+		grid-column: 1 / span 1;
+		grid-row: 3 / span 1;
+	}
+	#mba {
+		grid-column: 2 / span 1;
+		grid-row: 2 / span 1;
+	}
+	#loc {
+		grid-column: 2 / span 1;
+		grid-row: 3 / span 1;
+	}
+}
+
+/* Change colors for each button */
+a#yt:hover { box-shadow: 4px 4px 0 2px #FF0000; }
+a#mba:hover { box-shadow: 4px 4px 0 2px var(--mba-blue); }
+a#loc:hover { box-shadow: 4px 4px 0 2px #34A853; }
+
+/* Make the Font Awesome icons look more like their brand counterparts */
+a i { margin-right: 0.5em; }
+i.fa-twitch { color: #9146FF; }
+i.fa-youtube-play { color: #FF0000; }
+i.fa-otter { color: var(--mba-blue); }
+i.fa-location-dot { color: #34A853; }
+
+footer h4 {
+	padding-bottom: 5px;
+	border-bottom: 1px solid #fff;
+	font-size: 1.2rem;
+	text-align: left;
+}
+
+h4 + p{
+	text-align: left;
+	order: +1;
+}
+
+@media screen and (width < 1000px) {
+	footer h3 {
+		display: none;
+	}
+
+	h4 + p{
+		order: initial;
+	}
+}
+
+#copyright {
+	grid-column: 1 / span var(--num-cols);
+	/* Copyright is always at the bottom */
+	order: +100;
+}
