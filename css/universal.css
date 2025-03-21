@@ -252,6 +252,7 @@ article:nth-of-type(odd) {
 
 @media screen and (width < 1000px) {
 	article {
+		/* Overrides the odd-numbered article styling just above this */
 		grid-template-columns: 1fr !important;
 	}
 }
