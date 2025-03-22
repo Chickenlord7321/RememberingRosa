@@ -1,0 +1,95 @@
+/**********
+ * NAVBAR *
+ **********/
+
+.nav-location {
+	top: 0;
+	right: 0;
+	text-align: right;
+}
+
+nav {
+	margin: var(--nav-spacing);
+	/* Navbar should always be on top */
+	position: fixed;
+	z-index: 100;
+	/* We set a max width so the nav menu doesn't become so big that users 
+	can't scroll on mobile screens */
+	max-width: 50vw;
+}
+
+#menu {
+	background-color: var(--nav-bg-active);
+	font-size: 1.5rem;
+	/* Only the top right corner should be square, so it blends with the hamburger icon */
+	border-radius: var(--nav-radius) 0 var(--nav-radius) var(--nav-radius);
+
+	/* Setting the maximum height to the viewport height minus the top margin prevents 
+	the menu from going beyond the bounds of the screen. We then allow any overflowing 
+	content to scroll, which I remember was an issue from DIGI 220. */
+	max-height: calc(90vh - var(--nav-spacing) - var(--icon-size));
+	overflow-y: scroll;
+
+	/* This hides the menu until the user clicks the hamburger icon */
+	clip-path: inset(0 0 0 100%);
+	transition: all var(--nav-speed) ease-in-out;
+}
+
+/* Classes for hiding/showing the menu. Wish I could just use display: none, but it affects
+	the clip-path animation. */
+.show { 
+	height: auto; 
+}
+.hide { 
+	height: 0; 
+	width: 0; 
+}
+
+#menu li {
+	margin: 2em 1em;
+}
+
+#hamburger {
+	background-color: var(--nav-bg-inactive);
+	color: var(--nav-fg-inactive);
+	border-radius: var(--nav-radius);
+
+	/* We use the calc() function to subtract the amount of padding from the size of the 
+	hamburger. This is an easy way to make the font responsive to any changes you make 
+	to the hamburger icon! */
+	--pad: calc(var(--icon-size) / 4);
+	padding: var(--pad);
+	font-size: calc(var(--icon-size) - 2 * var(--pad));
+	text-align: center;
+
+	/* Set width of hamburger to be the same as the checkbox */
+	display: inline-block;	/* <span> elements are inline by default, which wouldn't allow us to set a width */
+	width: var(--icon-size);
+	height: var(--icon-size);
+
+	/* Animate the colors */
+	transition: background-color var(--nav-speed) ease,
+				color var(--nav-speed) ease;
+}
+
+input#hambox {
+	/* Make the checkbox invisible and place overtop the hamburger */
+	position: absolute;
+	z-index: 2;
+	opacity: 0;
+	/* Set the checkbox to be the same size as the hamburger icon */
+	width: var(--icon-size);
+	height: var(--icon-size);
+}
+
+/* Highlight hamburger icon when the user hovers over/clicks the hamburger */
+#hambox:hover ~ #hamburger, 
+#hambox:checked ~ #hamburger {
+	background-color: var(--nav-bg-active);
+	color: var(--nav-fg-active);
+}
+
+/* Slides the menu out */
+#hambox:checked ~ #menu {
+	clip-path: inset(0 0 0 0);
+}

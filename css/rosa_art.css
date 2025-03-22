@@ -15,14 +15,14 @@
 	}
 }
 
-#gallery {
+.gallery {
 	display: grid;
 	grid-template-columns: repeat(var(--gallery-num-cols), 1fr);
 	gap: var(--gallery-gap);
 	padding: var(--gallery-gap);
 }
 
-#gallery > h2 {
+.gallery > h2 {
 	grid-column: 1 / span var(--gallery-num-cols);
 	text-align: center;
 }

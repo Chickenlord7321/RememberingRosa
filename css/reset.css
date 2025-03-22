@@ -1,0 +1,41 @@
+/*******************
+ * RESET SYLESHEET *
+ *******************/
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+img,
+video,
+iframe {
+	max-width: 100%;
+}
+
+/* <address> elements are italic by default */
+address {
+	font-style: normal;
+}
+
+/* Minimum size for interactable elements on mobile screens */
+@media screen and (max-width: 800px) {
+	a,
+	button,
+	audio,
+	iframe,
+	input,
+	textarea,
+	video {
+		min-width: 42px;
+		min-height: 42px;
+	}
+}

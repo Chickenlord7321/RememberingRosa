@@ -1,0 +1,104 @@
+/**********
+ * FOOTER *
+ **********/
+
+footer {
+	padding: 40px 25%;
+	display: grid;
+	grid-template-columns: repeat(var(--num-cols), 1fr);
+	gap: 0 10%;
+	text-align: center;
+	background-color: #122142;
+}
+
+@media screen and (width < 550px) {
+	footer { padding: 40px 10%; }
+}
+
+footer > * {
+	margin-bottom: 2rem;
+}
+
+footer h3 {
+	/* Headers for button section go at the top */
+	order: -1;
+}
+
+footer a {
+	text-decoration: none;
+	padding: 1rem;
+	border-radius: 2rem;
+	font-size: 1.5rem;
+	color: #000;
+
+	width: 100%;
+	max-width: 15em;
+	justify-self: center;
+	transition: all 0.3s;
+}
+
+footer a:hover {
+	/* Defaults to Twitch colors, but we change the other buttons to have their own unique colors */
+	box-shadow: 4px 4px 0 2px #9146FF;
+	background-color: black;
+	color: white;
+}
+
+@media screen and (width >= 1000px) {
+	#twitch {
+		grid-column: 1 / span 1;
+		grid-row: 2 / span 1;
+	}
+	#yt {
+		grid-column: 1 / span 1;
+		grid-row: 3 / span 1;
+	}
+	#mba {
+		grid-column: 2 / span 1;
+		grid-row: 2 / span 1;
+	}
+	#loc {
+		grid-column: 2 / span 1;
+		grid-row: 3 / span 1;
+	}
+}
+
+/* Change colors for each button */
+a#yt:hover { box-shadow: 4px 4px 0 2px #FF0000; }
+a#mba:hover { box-shadow: 4px 4px 0 2px var(--mba-blue); }
+a#loc:hover { box-shadow: 4px 4px 0 2px #34A853; }
+
+/* Make the Font Awesome icons look more like their brand counterparts */
+a i { margin-right: 0.5em; }
+i.fa-twitch { color: #9146FF; }
+i.fa-youtube-play { color: #FF0000; }
+i.fa-otter { color: var(--mba-blue); }
+i.fa-location-dot { color: #34A853; }
+
+footer h4 {
+	padding-bottom: 5px;
+	border-bottom: 1px solid #fff;
+	font-size: 1.2rem;
+	text-align: left;
+}
+
+h4 + p{
+	text-align: left;
+	order: +1;
+}
+
+@media screen and (width < 1000px) {
+	footer h3 {
+		display: none;
+	}
+
+	h4 + p{
+		order: initial;
+	}
+}
+
+#copyright {
+	grid-column: 1 / span var(--num-cols);
+	/* Copyright is always at the bottom */
+	order: +100;
+}

@@ -1,50 +1,8 @@
-/*! add header comment */
+/*! add header comment to ALL PAGES */
 
-/*******************
- * RESET SYLESHEET *
- *******************/
-
-*,
-*::before,
-*::after {
-	margin: 0;
-	box-sizing: border-box;
-	scroll-behavior: smooth;
-}
-
-body {
-	font: 400 1rem/normal "Times New Roman", Times, serif;
-}
-
-ul {
-	padding: 0;
-	list-style: none;
-}
-
-img,
-video,
-iframe {
-	max-width: 100%;
-}
-
-/* <address> elements are italic by default */
-address {
-	font-style: normal;
-}
-
-/* Minimum size for interactable elements on mobile screens */
-@media screen and (max-width: 800px) {
-	a,
-	button,
-	audio,
-	iframe,
-	input,
-	textarea,
-	video {
-		min-width: 42px;
-		min-height: 42px;
-	}
-}
+@import url("./reset.css");
+@import url("./nav.css");
+@import url("./footer.css");
 
 :root {
 	/* Colors! */
@@ -73,9 +31,9 @@ address {
 
 /* More color classes for easily applying text/background color */
 .white-bg { background-color: #fff; }
-.white-fg { color: #fff; }
+.white-text { color: #fff; }
 .black-bg { background-color: #000; }
-.black-fg { color: #000; }
+.black-text { color: #000; }
 
 
 /***************
@@ -106,103 +64,6 @@ address {
 	background-size: 
 		0% var(--underline-size),
 		100% var(--underline-size);
-}
-
-
-/**********
- * NAVBAR *
- **********/
-
-.nav-location {
-	top: 0;
-	right: 0;
-	text-align: right;
-}
-
-nav {
-	margin: var(--nav-spacing);
-	/* Navbar should always be on top */
-	position: fixed;
-	z-index: 100;
-	/* We set a max width so the nav menu doesn't become so big that users 
-	can't scroll on mobile screens */
-	max-width: 50vw;
-}
-
-#menu {
-	background-color: var(--nav-bg-active);
-	font-size: 1.5rem;
-	/* Only the top right corner should be square, so it blends with the hamburger icon */
-	border-radius: var(--nav-radius) 0 var(--nav-radius) var(--nav-radius);
-
-	/* Setting the maximum height to the viewport height minus the top margin prevents 
-	the menu from going beyond the bounds of the screen. We then allow any overflowing 
-	content to scroll, which I remember was an issue from DIGI 220. */
-	max-height: calc(90vh - var(--nav-spacing) - var(--icon-size));
-	overflow-y: scroll;
-
-	/* This hides the menu until the user clicks the hamburger icon */
-	clip-path: inset(0 0 0 100%);
-	transition: all var(--nav-speed) ease-in-out;
-}
-
-/* Classes for hiding/showing the menu. Wish I could just use display: none, but it affects
-	the clip-path animation. */
-.show { 
-	height: auto; 
-}
-.hide { 
-	height: 0; 
-	width: 0; 
-}
-
-#menu li {
-	margin: 2em 1em;
-}
-
-#hamburger {
-	background-color: var(--nav-bg-inactive);
-	color: var(--nav-fg-inactive);
-	border-radius: var(--nav-radius);
-
-	/* We use the calc() function to subtract the amount of padding from the size of the 
-	hamburger. This is an easy way to make the font responsive to any changes you make 
-	to the hamburger icon! */
-	--pad: calc(var(--icon-size) / 4);
-	padding: var(--pad);
-	font-size: calc(var(--icon-size) - 2 * var(--pad));
-	text-align: center;
-
-	/* Set width of hamburger to be the same as the checkbox */
-	display: inline-block;	/* <span> elements are inline by default, which wouldn't allow us to set a width */
-	width: var(--icon-size);
-	height: var(--icon-size);
-
-	/* Animate the colors */
-	transition: background-color var(--nav-speed) ease,
-				color var(--nav-speed) ease;
-}
-
-input#hambox {
-	/* Make the checkbox invisible and place overtop the hamburger */
-	position: absolute;
-	z-index: 2;
-	opacity: 0;
-	/* Set the checkbox to be the same size as the hamburger icon */
-	width: var(--icon-size);
-	height: var(--icon-size);
-}
-
-/* Highlight hamburger icon when the user hovers over/clicks the hamburger */
-#hambox:hover ~ #hamburger, 
-#hambox:checked ~ #hamburger {
-	background-color: var(--nav-bg-active);
-	color: var(--nav-fg-active);
-}
-
-/* Slides the menu out */
-#hambox:checked ~ #menu {
-	clip-path: inset(0 0 0 0);
 }
 
 /****************
@@ -283,110 +144,4 @@ article h2 {
 
 article img {
 	display: block;
-}
-
-
-/**********
- * FOOTER *
- **********/
-
-footer {
-	padding: 40px 25%;
-	display: grid;
-	grid-template-columns: repeat(var(--num-cols), 1fr);
-	gap: 0 10%;
-	text-align: center;
-	background-color: #122142;
-}
-
-@media screen and (width < 550px) {
-	footer { padding: 40px 10%; }
-}
-
-footer > * {
-	margin-bottom: 2rem;
-}
-
-footer h3 {
-	/* Headers for button section go at the top */
-	order: -1;
-}
-
-footer a {
-	text-decoration: none;
-	padding: 1rem;
-	border-radius: 2rem;
-	font-size: 1.5rem;
-	color: #000;
-
-	width: 100%;
-	max-width: 15em;
-	justify-self: center;
-	transition: all 0.3s;
-}
-
-footer a:hover {
-	/* Defaults to Twitch colors, but we change the other buttons to have their own unique colors */
-	box-shadow: 4px 4px 0 2px #9146FF;
-	background-color: black;
-	color: white;
-}
-
-@media screen and (width >= 1000px) {
-	#twitch {
-		grid-column: 1 / span 1;
-		grid-row: 2 / span 1;
-	}
-	#yt {
-		grid-column: 1 / span 1;
-		grid-row: 3 / span 1;
-	}
-	#mba {
-		grid-column: 2 / span 1;
-		grid-row: 2 / span 1;
-	}
-	#loc {
-		grid-column: 2 / span 1;
-		grid-row: 3 / span 1;
-	}
-}
-
-/* Change colors for each button */
-a#yt:hover { box-shadow: 4px 4px 0 2px #FF0000; }
-a#mba:hover { box-shadow: 4px 4px 0 2px var(--mba-blue); }
-a#loc:hover { box-shadow: 4px 4px 0 2px #34A853; }
-
-/* Make the Font Awesome icons look more like their brand counterparts */
-a i { margin-right: 0.5em; }
-i.fa-twitch { color: #9146FF; }
-i.fa-youtube-play { color: #FF0000; }
-i.fa-otter { color: var(--mba-blue); }
-i.fa-location-dot { color: #34A853; }
-
-footer h4 {
-	padding-bottom: 5px;
-	border-bottom: 1px solid #fff;
-	font-size: 1.2rem;
-	text-align: left;
-}
-
-h4 + p{
-	text-align: left;
-	order: +1;
-}
-
-@media screen and (width < 1000px) {
-	footer h3 {
-		display: none;
-	}
-
-	h4 + p{
-		order: initial;
-	}
-}
-
-#copyright {
-	grid-column: 1 / span var(--num-cols);
-	/* Copyright is always at the bottom */
-	order: +100;
 }
