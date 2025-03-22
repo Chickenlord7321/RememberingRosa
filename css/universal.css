@@ -127,8 +127,6 @@ nav {
 	/* We set a max width so the nav menu doesn't become so big that users 
 	can't scroll on mobile screens */
 	max-width: 50vw;
-
-	border: 1px solid yellow;
 }
 
 #menu {
@@ -146,8 +144,6 @@ nav {
 	/* This hides the menu until the user clicks the hamburger icon */
 	clip-path: inset(0 0 0 100%);
 	transition: all var(--nav-speed) ease-in-out;
-
-	border: 1px solid red;
 }
 
 /* Classes for hiding/showing the menu. Wish I could just use display: none, but it affects
