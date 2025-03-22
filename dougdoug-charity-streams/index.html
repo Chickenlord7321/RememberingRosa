@@ -15,7 +15,7 @@ Last Update: 21 Mar 2025
 	<title>Remembering Rosa - DougDoug Charity Streams</title>
 
 	<!-- Favicon -->
-	<link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="../images/favicon_io/favicon.ico">
 
 	<!-- Font Awesome, a site that provides free icons for web development.
 	 	I'm using it for stuff like the hamburger menu or the YouTube and Twitch logos.
@@ -29,7 +29,7 @@ Last Update: 21 Mar 2025
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 	<!-- Script for animating the hamburger menu -->
-	<script src="./js/jquery.nav_menu.js"></script>
+	<script src="../js/jquery.nav_menu.js"></script>
 
 	<!-- Universal stylesheet -->
 	<link rel="stylesheet" href="../css/universal.css">
@@ -38,10 +38,51 @@ Last Update: 21 Mar 2025
 </head>
 
 <body>
+
+<!-- HAMBURGER MENU -->
+<nav class="nav-location">
+	<!-- This is a fun little "cheat". We use a checkbox for the menu so it can open 
+		and close with a click! This checkbox will not actually be visible to the user 
+		since we will place it underneath the hamburger icon. -->
+	<input type="checkbox" id="hambox" class="nav-location" onclick="switchIcon();">
+
+	<!-- Hamburger menu icon (fa-bars) from Font Awesome
+		This calss is exchanged for fa-xmark
+		See here: https://fontawesome.com/icons/bars?f=classic&s=solid -->
+	<span id="hamburger"><i class="fa fa-bars"></i></span>
+	<ul id="menu" class="hide">
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com">Homepage</a> -->
+			<a class="fancy-link" href="../index.html">Homepage</a>
+		</li>
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com/story-of-rosa">The Story of Rosa</a> -->
+			<a class="fancy-link" href="../story-of-rosa/index.html">The Story of Rosa</a>
+		</li>
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com/dougdoug-charity-streams">DougDoug Charity Streams</a> -->
+			<a class="fancy-link" href="../dougdoug-charity-streams/index.html">DougDoug Charity Streams</a>
+		</li>
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com/monterey-bay-aquarium">Monterey Bay Aquarium</a> -->
+			<a class="fancy-link" href="../monterey-bay-aquarium/index.html">Monterey Bay Aquarium</a>
+		</li>
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com/rosa-art">Rosa Art</a> -->
+			<a class="fancy-link" href="../rosa-art/index.html">Rosa Art</a>
+		</li>
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com/more-info">More Info</a> -->
+			<a class="fancy-link" href="../more-info/index.html">More Info</a>
+		</li>
+	</ul>
+</nav>
+
 <main role="img">
+	<h2>DougDoug Charity Streams</h2>
 	<!-- 2019 -->
 	<article>
-		<div>
+		<section>
 			<h2>2019 &mdash; $320.18</h2>
 			<p>
 				Doug often used to play the live Rosa cam from <abbr title="Monterey Bay Aquarium">MBA</abbr> on his 
@@ -50,7 +91,7 @@ Last Update: 21 Mar 2025
 				on her birthday, Doug and his community hosted a small charity stream in which they played otter-related 
 				games and donated all the funds raised to Monterey Bay Aquarium. It was only $320.18 that year, but that was only the beginning....
 			</p>
-		</div>
+		</section>
 		<div>
 			<h2>Rosa's 20th Birthday</h2>
 			<iframe width="495" 
@@ -67,7 +108,7 @@ Last Update: 21 Mar 2025
 
 	<!-- 2020 -->
 	<article>
-		<div>
+		<section>
 			<h2>2020 &mdash; $2,676</h2>
 			<p>
 				After such a positive response in 2019, Doug hosted another Rosa's birthday charity stream the follow&shy;ing year. 
@@ -75,7 +116,7 @@ Last Update: 21 Mar 2025
 				all expectations by raising over two and a half thousand dollars over the course of a 4-hour stream, making sure 
 				Rosa got to eat plenty of delicious shrimp cocktails in her retirement!
 			</p>
-		</div>
+		</section>
 		<div>
 			<h2>Rosa's 21st Birthday</h2>
 			<iframe width="495" 
@@ -92,7 +133,7 @@ Last Update: 21 Mar 2025
 
 	<!-- 2021 -->
 	<article>
-		<div>
+		<section>
 			<h2>2021 &mdash; $14,172.92</h2>
 			<p>
 				By now, the Rosa's Birthday Celebration event had become not just another funny stream idea in 
@@ -102,7 +143,7 @@ Last Update: 21 Mar 2025
 				smashing their fundraising records each year, Doug's Twitch chat did it again by tripling their previous 
 				donation, and then tripling it again.
 			</p>
-		</div>
+		</section>
 		<div>
 			<h2>Rosa's 22nd Birthday</h2>
 			<iframe width="495" 
@@ -119,7 +160,7 @@ Last Update: 21 Mar 2025
 
 	<!-- 2022 -->
 	<article>
-		<div>
+		<section>
 			<h2>2022 &mdash; $104,327.89</h2>
 			<p>
 				Rosa's 23rd birthday in 2022 was the year the dam broke open completely. The previous year, 
@@ -129,7 +170,7 @@ Last Update: 21 Mar 2025
 				<em>one hundred thousand dollars</em> to an otter in retirement who was already living life to 
 				the fullest. She <em>is</em> super adorable though, can you blame them?
 			</p>
-		</div>
+		</section>
 		<div>
 			<h2>Rosa's 23rd Birthday</h2>
 			<iframe width="495" 
@@ -146,7 +187,7 @@ Last Update: 21 Mar 2025
 
 	<!-- 2023 -->
 	<article>
-		<div>
+		<section>
 			<h2>2023 &mdash; $302,014.21</h2>
 			<p>
 				In 2023, the DougDoug community achieved a new high: they beat Google. Not even one of the world's 
@@ -155,7 +196,7 @@ Last Update: 21 Mar 2025
 				birthday celebration while Rosa was still with us. But what an end it was! Rosa knew how to throw the 
 				greatest birthday parties of all time!
 			</p>
-		</div>
+		</section>
 		<div>
 			<h2>Rosa's 24th Birthday</h2>
 			<iframe width="560" 
@@ -172,7 +213,7 @@ Last Update: 21 Mar 2025
 
 	<!-- 2024 -->
 	<article>
-		<div>
+		<section>
 			<h2>2024 &mdash; $625,375.68</h2>
 			<p>
 				After Rosa passed away on June 5, 2024, the Rosa birthday streams became a celebration of Rosa's life and 
@@ -181,7 +222,7 @@ Last Update: 21 Mar 2025
 				Rosa will go down in history as the most beloved otter of all time, so long as Doug and Twitch Chat are 
 				there to love and remember her.
 			</p>
-		</div>
+		</section>
 		<div>
 			<h2>Rosa's Celebration of Life</h2>
 			<iframe width="560" 
@@ -195,10 +236,10 @@ Last Update: 21 Mar 2025
 			</iframe>
 		</div>
 	</article>
-	<div>
+	<section>
 		<h2>Grand Total:</h2>
 		<h2>$1,048,886.46</h2>
-	</div>
+	</section>
 </main>
 
 <!-- Footer -->

@@ -127,6 +127,8 @@ nav {
 	/* We set a max width so the nav menu doesn't become so big that users 
 	can't scroll on mobile screens */
 	max-width: 50vw;
+
+	border: 1px solid yellow;
 }
 
 #menu {
@@ -144,6 +146,8 @@ nav {
 	/* This hides the menu until the user clicks the hamburger icon */
 	clip-path: inset(0 0 0 100%);
 	transition: all var(--nav-speed) ease-in-out;
+
+	border: 1px solid red;
 }
 
 /* Classes for hiding/showing the menu. Wish I could just use display: none, but it affects
@@ -247,7 +251,7 @@ article:nth-of-type(odd) {
 
 /* Alternating layout on larger devices */
 @media screen and (width >= 1000px) {
-	article:nth-of-type(even) > div:first-child { order: +1; }
+	article:nth-of-type(even) > section { order: +1; }
 }
 
 @media screen and (width < 1000px) {
@@ -257,14 +261,14 @@ article:nth-of-type(odd) {
 	}
 }
 
-article > div {
+article > section, article > div {
 	position: relative;		/* for children with absolute positioning */
 	background-color: #000;
 	border-radius: 1em;
 	padding: 2em;
 }
 
-article div:first-child::before {
+article > section::before {
 	content: 'Chapter 1';
 	position: absolute;
 	top: -1em;

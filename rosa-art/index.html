@@ -12,10 +12,10 @@ Last Update: 21 Mar 2025
 	<meta name="author" content="Caleb Bronn">
 	<meta name="description" content="">
 	<meta name="keywords" content="Rosa, Otters, DougDoug, Monterey Bay Aquarium">
-	<title>Remembering Rosa - Rosa Art</title>
+	<title>Remembering Rosa - The Story of Rosa</title>
 
 	<!-- Favicon -->
-	<link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="../images/favicon_io/favicon.ico">
 
 	<!-- Font Awesome, a site that provides free icons for web development.
 	 	I'm using it for stuff like the hamburger menu or the YouTube and Twitch logos.
@@ -29,15 +29,246 @@ Last Update: 21 Mar 2025
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 	<!-- Script for animating the hamburger menu -->
-	<script src="./js/jquery.nav_menu.js"></script>
+	<script src="../js/jquery.nav_menu.js"></script>
 
 	<!-- Universal stylesheet -->
 	<link rel="stylesheet" href="../css/universal.css">
-	<!-- rosa_art.css is specific to this page only -->
-	<link rel="stylesheet" href="../css/rosa_art.css">
+	<!-- story_of_rosa.css is specific to this page only -->
+	<link rel="stylesheet" href="../css/story_of_rosa.css">
 </head>
 
 <body>
+
+<!-- HAMBURGER MENU -->
+<nav class="nav-location">
+	<!-- This is a fun little "cheat". We use a checkbox for the menu so it can open 
+		and close with a click! This checkbox will not actually be visible to the user 
+		since we will place it underneath the hamburger icon. -->
+	<input type="checkbox" id="hambox" class="nav-location" onclick="switchIcon();">
+
+	<!-- Hamburger menu icon (fa-bars) from Font Awesome
+		This calss is exchanged for fa-xmark
+		See here: https://fontawesome.com/icons/bars?f=classic&s=solid -->
+	<span id="hamburger"><i class="fa fa-bars"></i></span>
+	<ul id="menu" class="hide">
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com">Homepage</a> -->
+			<a class="fancy-link" href="../index.html">Homepage</a>
+		</li>
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com/story-of-rosa">The Story of Rosa</a> -->
+			<a class="fancy-link" href="../story-of-rosa/index.html">The Story of Rosa</a>
+		</li>
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com/dougdoug-charity-streams">DougDoug Charity Streams</a> -->
+			<a class="fancy-link" href="../dougdoug-charity-streams/index.html">DougDoug Charity Streams</a>
+		</li>
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com/monterey-bay-aquarium">Monterey Bay Aquarium</a> -->
+			<a class="fancy-link" href="../monterey-bay-aquarium/index.html">Monterey Bay Aquarium</a>
+		</li>
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com/rosa-art">Rosa Art</a> -->
+			<a class="fancy-link" href="../rosa-art/index.html">Rosa Art</a>
+		</li>
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com/more-info">More Info</a> -->
+			<a class="fancy-link" href="../more-info/index.html">More Info</a>
+		</li>
+	</ul>
+</nav>
+
+<main role="img">
+	<h1>Rosa Art</h1>
+
+	<section id="gallery">
+		<h2>Art Created by the DougDoug Community In Honor of Rosa</h2>
+
+		<!-- Column 1 -->
+		<ul class="col">
+			<li>
+				<img src="../images/among-the-stars-by-potaattiss.webp" alt="among the stars by potaattiss">
+				<div>
+					<h3>Among the Stars</h3>
+					<a href="https://www.dougdoug.com/celebratingrosaslife100?lightbox=dataItem-m09gm2xw16">by potaattiss &mdash; 2024</a>
+				</div>
+			</li>
+			<li>
+				<img src="../images/great-sea-in-the-sky-by-bobab00b.webp" alt="great sea in the sky by bobab00b">
+				<div>
+					<h3>Great Sea in the Sky</h3>
+					<a href="https://www.dougdoug.com/celebratingrosaslife100?lightbox=dataItem-m09gm2y544">by bobob00b &mdash; 2024</a>
+				</div>
+			</li>
+			<li>
+				<img src="../images/glory-days-by-artlinxin.webp" alt="glory days by artlinxin">
+				<div>
+					<h3>Glory Days</h3>
+					<a href="https://www.dougdoug.com/courageforrosa101?lightbox=dataItem-llr9dvis9">by artlinxin &mdash; 2023</a>
+				</div>
+			</li>
+			<li>
+				<img src="../images/swimming-blissfully-by-ozm0th.webp" alt="swimming blissfully by ozm0th">
+				<div>
+					<h3>Swimming Blissfully</h3>
+					<a href="">by ozm0th</a>
+				</div>
+			</li>
+		</ul>	<!-- end column 1 -->
+
+		<!-- Column 2 -->
+		<ul class="col">
+			<li>
+				<img src="../images/rosas-legacy-by-kezral.webp" alt="rosa's legacy by kezral">
+				<div>
+					<h3>Rosa's Legacy</h3>
+					<a href="https://www.dougdoug.com/celebratingrosaslife100?lightbox=dataItem-m09gm2yb24">by kezral &mdash; 2024</a>
+				</div>
+			</li>
+			<li>
+				<!-- Long Live the Queen by The Recovery System, written in Rosa's memory -->
+				<iframe width="560" 
+						height="315" 
+						src="https://www.youtube.com/embed/g-m8dGtZJcY?si=wJJw-K4B44lm7fa9" 
+						title="YouTube video player" 
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+						referrerpolicy="strict-origin-when-cross-origin" 
+						allowfullscreen>
+				</iframe>
+				<div>
+					<h3>Long Live the Queen</h3>
+					<a href="https://www.youtube.com/watch?v=g-m8dGtZJcY" aria-label="Watch on YouTube">by The Recovery System &mdash; 2024</a>
+				</div>
+			</li>
+			<li>
+				<img src="../images/" alt="">
+				<div>
+					<h3></h3>
+					<a href=""></a>
+				</div>
+			</li>
+			<li>
+				<img src="../images/" alt="">
+				<div>
+					<h3></h3>
+					<a href=""></a>
+				</div>
+			</li>
+		</ul>	<!-- end column 2 -->
+
+		<!-- Column 3 -->
+		<ul class="col">
+			<li>
+				<img src="../images/" alt="">
+				<div>
+					<h3></h3>
+					<a href=""></a>
+				</div>
+			</li>
+			<li>
+				<img src="../images/" alt="">
+				<div>
+					<h3></h3>
+					<a href=""></a>
+				</div>
+			</li>
+			<li>
+				<img src="../images/" alt="">
+				<div>
+					<h3></h3>
+					<a href=""></a>
+				</div>
+			</li>
+			<li>
+				<img src="../images/" alt="">
+				<div>
+					<h3></h3>
+					<a href=""></a>
+				</div>
+			</li>
+		</ul>	<!-- end column 3 -->
+
+		<!-- Column 4 -->
+		<ul class="col">
+			<li>
+				<img src="../images/" alt="">
+				<div>
+					<h3></h3>
+					<a href=""></a>
+				</div>
+			</li>
+			<li>
+				<img src="../images/" alt="">
+				<div>
+					<h3></h3>
+					<a href=""></a>
+				</div>
+			</li>
+			<li>
+				<img src="../images/" alt="">
+				<div>
+					<h3></h3>
+					<a href=""></a>
+				</div>
+			</li>
+			<li>
+				<img src="../images/" alt="">
+				<div>
+					<h3></h3>
+					<a href=""></a>
+				</div>
+			</li>
+		</ul>	<!-- end column 4 -->
+	</section>	<!-- end gallery -->
+</main>
+
+<!-- Footer -->
+<footer>
+	<h3 class="white-fg">DougDoug Community</h3>
+	
+	<!-- DougDoug's Twitch Channel -->
+	<a id="twitch" class="white-bg"  href="https://www.twitch.tv/dougdoug" target="_blank">
+		<!-- Twitch icon from Font Awesome -->
+		<i class="fa-brands fa-twitch fa-xl" aria-hidden="true" role="img"></i>Doug&shy;Doug on Twitch
+	</a>
+	
+	<!-- DougDoug's YouTube Channel -->
+	<a id="yt" class="white-bg"  href="https://www.youtube.com/user/Gloudas"target="_blank">
+		<!-- YouTube icon from Font Awesome -->
+		<i class="fa fa-youtube-play fa-xl" aria-hidden="true" role="img"></i>Doug&shy;Doug on YouTube
+	</a>
+
+	<h3 class="white-fg">Monterey Bay Aquarium</h3>
+	
+	<!-- Monterey Bay Aquarium -->
+	<a id="mba" class="white-bg" href="https://www.montereybayaquarium.org/" target="_blank">
+		<!-- Uses otter icon from Font Awesome -->
+		<i class="fa-solid fa-otter fa-xl" aria-hidden="true" role="img"></i>MBA Website
+	</a>
+
+	<!-- MBA address, links to their location on Google maps -->
+	<a id="loc" class="white-bg"
+		href="https://www.google.com/maps/dir//886+Cannery+Row,+Monterey,+CA+93940,+USA/@36.6175496,-121.9835741,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x808de401d01aa6bf:0xc9f86491056b6116!2m2!1d-121.901173!2d36.617578?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoASAFQAw%3D%3D"
+		target="_blank">
+		<address>
+			<!-- Location icon from Font Awesome -->
+			<i class="fa-solid fa-location-dot fa-xl" aria-hidden="true" role="img"></i>Where is MBA?
+		</address>
+	</a>
+
+	<!-- Disclaimers -->
+	<h4>Disclaimer:</h4>
+	<p>
+		All video clips about Doug and Doug's community are sourced from the DougDoug Youtube Channel.
+	</p>
+	<h4>Disclaimer:</h4>
+	<p>
+		All factual information about otters on this site is sourced from Monterey Bay Aquarium.
+	</p>
+
+	<!-- Copyright -->
+	<p id="copyright" class="white-text">© Caleb Bronn 2025</a>
+</footer>
 
 </body>
 

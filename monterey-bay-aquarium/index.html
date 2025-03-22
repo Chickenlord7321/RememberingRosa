@@ -15,7 +15,7 @@ Last Update: 21 Mar 2025
 	<title>Remembering Rosa - Monterey Bay Aquarium</title>
 
 	<!-- Favicon -->
-	<link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="../images/favicon_io/favicon.ico">
 
 	<!-- Font Awesome, a site that provides free icons for web development.
 	 	I'm using it for stuff like the hamburger menu or the YouTube and Twitch logos.
@@ -29,7 +29,7 @@ Last Update: 21 Mar 2025
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 	<!-- Script for animating the hamburger menu -->
-	<script src="./js/jquery.nav_menu.js"></script>
+	<script src="../js/jquery.nav_menu.js"></script>
 
 	<!-- Universal stylesheet -->
 	<link rel="stylesheet" href="../css/universal.css">
@@ -39,6 +39,154 @@ Last Update: 21 Mar 2025
 
 <body>
 
+<!-- HAMBURGER MENU -->
+<nav class="nav-location">
+	<!-- This is a fun little "cheat". We use a checkbox for the menu so it can open 
+		and close with a click! This checkbox will not actually be visible to the user 
+		since we will place it underneath the hamburger icon. -->
+	<input type="checkbox" id="hambox" class="nav-location" onclick="switchIcon();">
+
+	<!-- Hamburger menu icon (fa-bars) from Font Awesome
+		This calss is exchanged for fa-xmark
+		See here: https://fontawesome.com/icons/bars?f=classic&s=solid -->
+	<span id="hamburger"><i class="fa fa-bars"></i></span>
+	<ul id="menu" class="hide">
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com">Homepage</a> -->
+			<a class="fancy-link" href="../index.html">Homepage</a>
+		</li>
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com/story-of-rosa">The Story of Rosa</a> -->
+			<a class="fancy-link" href="../story-of-rosa/index.html">The Story of Rosa</a>
+		</li>
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com/dougdoug-charity-streams">DougDoug Charity Streams</a> -->
+			<a class="fancy-link" href="../dougdoug-charity-streams/index.html">DougDoug Charity Streams</a>
+		</li>
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com/monterey-bay-aquarium">Monterey Bay Aquarium</a> -->
+			<a class="fancy-link" href="../monterey-bay-aquarium/index.html">Monterey Bay Aquarium</a>
+		</li>
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com/rosa-art">Rosa Art</a> -->
+			<a class="fancy-link" href="../rosa-art/index.html">Rosa Art</a>
+		</li>
+		<li>
+			<!-- <a class="fancy-link" href="http://rememberingrosa.com/more-info">More Info</a> -->
+			<a class="fancy-link" href="../more-info/index.html">More Info</a>
+		</li>
+	</ul>
+</nav>
+
+<main role="img">
+	<h2>Monterey Bay Aquarium</h2>
+	<!-- Early days at MBA -->
+	<article>
+		<section>
+			<h2>Early Days of Monterey Bay Aquarium</h2>
+			<p>
+				The Monterey Bay Aquarium has been caring for Southern Sea Otters since before they even opened as 
+				an aquarium. In 1981, a concerned citizen brought their inexperienced 9-member staff an orphaned male 
+				sea otter pup, who sadly died. 
+			</p>
+			<p>
+				With a renewed determination to make sure that wouldn't happen again, 
+				MBA joined the Southern Sea Otter Recovery Team in 1982 &mdash; a team created by the U.S Fish and 
+				Wildlife Service to research and protect the struggling Southern Sea Otter population.
+			</p>
+			<p>
+				<a href="https://www.montereybayaquarium.org/animals/sea-otter-program-timeline" target="_blank" aria-label="Opens MBA website in a new tab">Read more</a> about the history of MBA's Sea Otter Program.
+			</p>
+		</section>
+		<div>
+			<h2>Young Sea Otters were Hand-Fed</h2>
+			<img src="../images/young-otter-being-fed.webp" alt="young otter being fed">
+		</div>
+	</article>
+
+	<!-- Sea Otter Surrogacy Program -->
+	<article>
+		<section>
+			<h2>Sea Otter Surrogacy Program</h2>
+			<p>
+				In 2001, Monterey Bay Aquarium began their Sea Otter Surrogacy Program with Otter 217, a two-week-old male 
+				pup, and Toola, a female otter at the aquarium who has just given birth to a stillborn pup. Toola immediately 
+				adopted and raised Otter 217 as her own, and within 4 days of his release back into the wild, he was seen foraging 
+				with other otters in Elkhorn Slough, an otter habitat near Monterey Bay. The success of Toola and Otter 217 lead 
+				the way for otters like Rosa and Selka to do the same.
+			</p>
+		</section>
+		<div>
+			<h2>Selka, Rosa's Daughter, Raises Her Own Pup!</h2>
+			<img src="../images/selka-raising-pup-893.jpg" alt="Selka raising pup 893">
+		</div>
+	</article>
+
+	<!-- Bone worms!!! -->
+	<article>
+		<section>
+			<h2>A New Discovery</h2>
+			<p>
+				Helping sea otters is not the only thing Monterey Bay Aquarium does &mdash; sometimes they also discover new species! 
+				In 2004, scientists working at MBA discovered two new species of tube worms that feed on whale carcasses (known as 
+				"whale falls"). These Bone-Eating Worms (genus <em>Osedax</em>, latin for "bone devourer") secrete acid to dissolve 
+				the connective tissue and fats in whale bones, from which point symbiotic bacteria digest the dissolved bone, providing a source of food for the worm.
+			</p>
+		</section>
+		<div>
+			<h2>Bone-Eating Worms</h2>
+			<img src="../images/bone-worms.jpg" alt="Bone Worms">
+		</div>
+	</article>
+</main>
+
+<!-- Footer -->
+<footer>
+	<h3 class="white-fg">DougDoug Community</h3>
+	
+	<!-- DougDoug's Twitch Channel -->
+	<a id="twitch" class="white-bg"  href="https://www.twitch.tv/dougdoug" target="_blank">
+		<!-- Twitch icon from Font Awesome -->
+		<i class="fa-brands fa-twitch fa-xl" aria-hidden="true" role="img"></i>Doug&shy;Doug on Twitch
+	</a>
+	
+	<!-- DougDoug's YouTube Channel -->
+	<a id="yt" class="white-bg"  href="https://www.youtube.com/user/Gloudas"target="_blank">
+		<!-- YouTube icon from Font Awesome -->
+		<i class="fa fa-youtube-play fa-xl" aria-hidden="true" role="img"></i>Doug&shy;Doug on YouTube
+	</a>
+
+	<h3 class="white-fg">Monterey Bay Aquarium</h3>
+	
+	<!-- Monterey Bay Aquarium -->
+	<a id="mba" class="white-bg" href="https://www.montereybayaquarium.org/" target="_blank">
+		<!-- Uses otter icon from Font Awesome -->
+		<i class="fa-solid fa-otter fa-xl" aria-hidden="true" role="img"></i>MBA Website
+	</a>
+
+	<!-- MBA address, links to their location on Google maps -->
+	<a id="loc" class="white-bg"
+		href="https://www.google.com/maps/dir//886+Cannery+Row,+Monterey,+CA+93940,+USA/@36.6175496,-121.9835741,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x808de401d01aa6bf:0xc9f86491056b6116!2m2!1d-121.901173!2d36.617578?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoASAFQAw%3D%3D"
+		target="_blank">
+		<address>
+			<!-- Location icon from Font Awesome -->
+			<i class="fa-solid fa-location-dot fa-xl" aria-hidden="true" role="img"></i>Where is MBA?
+		</address>
+	</a>
+
+	<!-- Disclaimers -->
+	<h4>Disclaimer:</h4>
+	<p>
+		All video clips about Doug and Doug's community are sourced from the DougDoug Youtube Channel.
+	</p>
+	<h4>Disclaimer:</h4>
+	<p>
+		All factual information about otters on this site is sourced from Monterey Bay Aquarium.
+	</p>
+
+	<!-- Copyright -->
+	<p id="copyright" class="white-text">© Caleb Bronn 2025</p>
+</footer>
 </body>
 
 </html>
