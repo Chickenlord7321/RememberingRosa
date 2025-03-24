@@ -60,6 +60,7 @@ nav {
 	--pad: calc(var(--icon-size) / 4);
 	padding: var(--pad);
 	font-size: calc(var(--icon-size) - 2 * var(--pad));
+	line-height: 1;
 	text-align: center;
 
 	/* Set width of hamburger to be the same as the checkbox */

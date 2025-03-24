@@ -66,6 +66,44 @@
 		100% var(--underline-size);
 }
 
+/*************
+ * HERO PAGE *
+ *************/
+
+.hero-page {
+	display: flex;
+	flex-flow: row wrap;
+	min-height: 100vmin;
+}
+
+.hero-page header {
+	position: relative; /* for children */
+	background-color: rgba(0, 0, 0, 0.4);
+	/* Make the hero page's text container fill the remaining space left over by the ripple div */
+	flex: 1 1 0%;
+	min-width: 7em;
+	font-size: 3rem;
+	text-align: center;
+	/* Add enough padding for the h1 to be clear of the hamburger menu so that it doesn't get covered up */
+	padding-top: calc(var(--nav-spacing) + var(--icon-size));
+	/* Since different browsers will have slightly different breakpoints, we add a 
+		transition to make it seems less jarring. */
+	transition: padding-top 0.2s;
+}
+
+.hero-page img {
+	/* Since <img> elements are inline by default, they are treated as "text", which means they have line height.
+	This creates a small gap below the image, so we reset the img to block-level to fix this. */
+	display: block;
+	/* Using vmin allows the image to naturally resize based on the device width/height so that 
+	it always fits */
+	height: 100vmin;
+	/* In case the screen is too small for the image, we use object-fit to maintain 
+	the image's aspect ratio, and object-position to make Rosa stay in the same location */
+	object-fit: cover;
+	object-position: 0 0;
+}
+
 /****************
  * MAIN CONTENT *
  ****************/
@@ -118,9 +156,11 @@ article:nth-of-type(odd) {
 	}
 }
 
-article > section, article > div {
+article > section, 
+article > div {
 	position: relative;		/* for children with absolute positioning */
 	background-color: #000;
+	/* background-image: linear-gradient(to right bottom, #000000, #080606, #0f0c0a, #13110e, #151612); */
 	border-radius: 1em;
 	padding: 2em;
 }

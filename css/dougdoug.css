@@ -1,0 +1,64 @@
+.hero-page header {
+	min-width: 10em;
+	max-width: calc(100vw - 100vmin);	/* calculate remaining width */
+}
+
+
+@media screen and (orientation: portrait) {
+	.hero-page header {
+		min-width: 0;
+		max-width: 100vw;
+		margin-top: 100vmin;
+		/* Change padding when the hero page text moves below the image. */
+		padding-top: 1em;
+	}
+}
+
+/* Similar to the shadow on the homepage, except this one is on the right. */
+.shadow-left {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+/* Apply shadow only on wide screens */
+@media screen and (orientation: landscape){
+	.shadow-left::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100vmin;
+		box-shadow: inset 200px 0 200px #000;
+	}
+}
+
+.hero-page img {
+	object-position: 40% 50%;
+}
+
+#slide-out-curtain {
+	position: absolute;
+	top: 0;
+	height: 100vmin;
+	width: 0;
+	background-color: #000;
+	box-shadow: 100px 0 100px #000;
+	/* clip-path: polygon(
+			0 0,
+			90% 0,
+			100% 100%,
+			0 100%
+		); */
+	/* transform: skewX(15deg); */
+	/* filter: drop-shadow(100px 0 50px #000); */
+	animation: slideLeft 2s ease-out;
+}
+
+@keyframes slideLeft {
+	from {
+		width: 100vw;
+	}
+	to {
+		width: 0;
+	}
+}

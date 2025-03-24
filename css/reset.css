@@ -8,6 +8,7 @@
 	margin: 0;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
+	scroll-margin-top: 4rem;
 }
 
 ul {
@@ -38,4 +39,8 @@ address {
 		min-width: 42px;
 		min-height: 42px;
 	}
+}
+
+body {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
