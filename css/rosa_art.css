@@ -1,3 +1,7 @@
+/*****************
+ * GALLERY RULES *
+ *****************/
+
 :root {
 	--gallery-gap: 1.5rem; /* Gap between each img */
 	--gallery-num-cols: 4;
@@ -19,7 +23,6 @@
 	display: grid;
 	grid-template-columns: repeat(var(--gallery-num-cols), 1fr);
 	gap: var(--gallery-gap);
-	padding: var(--gallery-gap);
 }
 
 .gallery > h2 {
@@ -38,11 +41,10 @@ iframe {
   display: block;
   width: 100%;
   /* height: 100%; */
-  object-fit: cover;
+  /* object-fit: cover; */
 }
 
 .col > li {
-	/* flex: 1 1 auto; */
 	position: relative;
 }
 
@@ -53,8 +55,8 @@ iframe {
 	left: 0;
 	/* Cosmetics */
 	padding: 5px;
-	background-color: rgba(255, 255, 255, 0.5);
-	color: black;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
 	width: 100%;
 	/* Effects */
 	opacity: 0;
@@ -62,4 +64,186 @@ iframe {
 }
 .col li:hover > div {
 	opacity: 1;
+}
+
+
+/*****************************
+ * SQUARING THE SQUARE RULES *
+ *****************************/
+
+ /* The original Perfect Squaring the Square is a 122 units. To make our web version 
+	responsive, we calculate the percentages of the width/height that each div should 
+	take up as a percentage of the original 112-unit base size. 
+*/
+:root {
+	--s50: calc(50 / 112 * 100%);
+	--s42: calc(42 / 112 * 100%);
+	--s37: calc(37 / 112 * 100%);
+	--s35: calc(35 / 112 * 100%);
+	--s33: calc(33 / 112 * 100%);
+	--s29: calc(29 / 112 * 100%);
+	--s27: calc(27 / 112 * 100%);
+	--s25: calc(25 / 112 * 100%);
+	--s24: calc(24 / 112 * 100%);
+	--s19: calc(19 / 112 * 100%);
+	--s18: calc(18 / 112 * 100%);
+	--s17: calc(17 / 112 * 100%);
+	--s16: calc(16 / 112 * 100%);
+	--s15: calc(15 / 112 * 100%);
+	--s11: calc(11 / 112 * 100%);
+	--s9: calc(9 / 112 * 100%);
+	--s8: calc(8 / 112 * 100%);
+	--s7: calc(7 / 112 * 100%);
+	--s6: calc(6 / 112 * 100%);
+	--s4: calc(4 / 112 * 100%);
+	--s2: calc(2 / 112 * 100%);
+}
+
+#squaring-the-square {
+	width: 100vmin;
+	height: 100vmin;
+	position: relative;		/* for children with absolute position */
+	overflow: hidden;
+	border: 2px solid white;
+}
+
+
+#squaring-the-square div {
+	border: 2px solid white;
+	position: absolute;
+	overflow: hidden;
+}
+
+#squaring-the-square img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Size and positioning */
+#s50 {
+	width: var(--s50);
+	height:var(--s50);
+	top: 0;
+	left: 0;
+}
+#s42 {
+	width: var(--s42);
+	height:var(--s42);
+	bottom: 0;
+	right: 0;
+}
+#s37 {
+	width: var(--s37);
+	height:var(--s37);
+	bottom: 0;
+	right: var(--s42);
+}
+#s35 {
+	width: var(--s35);
+	height:var(--s35);
+	top: 0;	
+	left: var(--s50);
+}
+#s33 {
+	width: var(--s33);
+	height:var(--s33);
+	bottom: 0;
+	left: 0;
+}
+#s29 {
+	width: var(--s29);
+	height:var(--s29);
+	bottom: var(--s33);
+	left: 0;
+}
+#s27 {
+	width: var(--s27);
+	height:var(--s27);
+	top: 0;
+	right: 0;
+}
+#s25 {
+	width: var(--s25);
+	height:var(--s25);
+	bottom: var(--s37);
+	left: var(--s29);
+}
+#s24 {
+	width: var(--s24);
+	height:var(--s24);
+	bottom: var(--s42);
+	right: 0;
+}
+#s19 {
+	width: var(--s19);
+	height:var(--s19);
+	top: var(--s27);
+	right: 0;
+}
+#s18 {
+	width: var(--s18);
+	height:var(--s18);
+	bottom: var(--s42);
+	right: var(--s24);
+}
+#s17 {
+	width: var(--s17);
+	height:var(--s17);
+	top: var(--s35);
+	left: calc(var(--s50) + var(--s15));
+}
+#s16 {
+	width: var(--s16);
+	height:var(--s16);
+	bottom: var(--s37);
+	right: var(--s42);
+}
+#s15 {
+	width: var(--s15);
+	height:var(--s15);
+	top: var(--s35);
+	left: var(--s50);
+}
+#s11 {
+	width: var(--s11);
+	height:var(--s11);
+	top: var(--s35);
+	right: var(--s19);
+}
+#s9 {
+	width: var(--s9);
+	height:var(--s9);
+	top: var(--s50);
+	left: calc(var(--s29) + var(--s25));
+}
+#s8 {
+	width: var(--s8);
+	height:var(--s8);
+	top: var(--s27);
+	right: var(--s19);
+}
+#s7 {
+	width: var(--s7);
+	height:var(--s7);
+	top: calc(var(--s50) + var(--s2));
+	right: calc(var(--s24) + var(--s18));
+}
+#s6 {
+	width: var(--s6);
+	height:var(--s6);
+	top: calc(var(--s35) + var(--s11));
+	right: var(--s24);
+}
+#s4 {
+	width: var(--s4);
+	height:var(--s4);
+	bottom: var(--s33);
+	left: var(--s29);
+}
+#s2 {
+	width: var(--s2);
+	height:var(--s2);
+	top: calc(var(--s35) + var(--s15));
+	left: calc(var(--s29) + var(--s25) + var(--s9));
 }
