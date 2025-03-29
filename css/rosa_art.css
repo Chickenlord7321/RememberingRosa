@@ -46,6 +46,7 @@ iframe {
 
 .col > li {
 	position: relative;
+	border: 2px solid white;
 }
 
 .col > li > div {

@@ -1,0 +1,75 @@
+/*************
+ * HERO PAGE *
+ *************/
+
+.hero-page img {
+	object-position: 50% 80%;
+}
+
+
+/* Similar to the shadow on the homepage, except this one is on the right. */
+.shadow-left {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: -1;
+}
+/* Apply shadow only on wide screens */
+@media screen and (orientation: landscape){
+	.shadow-left::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100vmin;
+		box-shadow: inset 50px 0 50px #000;
+	}
+}
+
+.hero-page header {
+	position: relative;
+	z-index: +1;
+}
+
+@media screen and (width < 132vmin) {
+	.hero-page header {
+		order: +1;
+	}
+}
+
+#video-slide {
+	width: 100vmin;
+	height: 100vmin;
+	padding: 3rem;
+	padding-top: calc(var(--nav-spacing) + var(--icon-size));
+	display: grid;
+	grid-template-columns: 2fr 1fr 2fr;
+	grid-template-rows: auto;
+	gap: 2rem 0;
+}
+
+@media screen and (orientation: portrait) {
+	#video-slide {
+		padding: 2rem;
+	}
+}
+
+#video-slide iframe {
+	animation: slideVideo 2s ease-in-out;
+}
+
+#video-slide iframe:first-of-type {
+	grid-column: 1 / span 2;
+}
+#video-slide iframe:last-of-type {
+	grid-column: 2 / span 2;
+}
+
+@keyframes slideVideo {
+	from {
+		margin-left: -100vw;
+	}
+	to {
+		margin-left: 0;
+	}
+}

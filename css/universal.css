@@ -77,7 +77,6 @@
 }
 
 .hero-page header {
-	position: relative; /* for children */
 	background-color: rgba(0, 0, 0, 0.4);
 	/* Make the hero page's text container fill the remaining space left over by the ripple div */
 	flex: 1 1 0%;

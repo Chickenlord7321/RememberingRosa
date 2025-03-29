@@ -31,6 +31,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: -1;
 }
 /* Apply shadow only on wide screens */
 @media screen and (orientation: landscape){
@@ -60,7 +61,7 @@
 	position: absolute; 
 	top: 0;
 	left: 0;
-	z-index: -1; 
+	z-index: -1;
 	width: 100%; 
 	height: 100vmin; 
 	background-color: black;
@@ -126,11 +127,11 @@ h1 {
 	hyphens: auto;
 }
 
-#hero-text ul {
+.hero-page header ul {
 	list-style: none;
 	margin: 1em;
 }
 
-#hero-text li {
+.hero-page header li {
 	margin-top: 1em;
 }
