@@ -38,19 +38,20 @@
 }
 
 #video-slide {
+	border: 3px solid red;
+
 	width: 100vmin;
 	height: 100vmin;
-	padding: 3rem;
+	padding: 2vw;
 	padding-top: calc(var(--nav-spacing) + var(--icon-size));
 	display: grid;
 	grid-template-columns: 2fr 1fr 2fr;
-	grid-template-rows: auto;
-	gap: 2rem 0;
+	gap: 2vw 0;
 }
 
 @media screen and (orientation: portrait) {
 	#video-slide {
-		padding: 2rem;
+		padding-top: 2vw;
 	}
 }
 

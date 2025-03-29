@@ -90,6 +90,11 @@
 	transition: padding-top 0.2s;
 }
 
+h1 {
+	font-size: max(4vw, 6vh);
+	padding: 0 5px;
+}
+
 .hero-page img {
 	/* Since <img> elements are inline by default, they are treated as "text", which means they have line height.
 	This creates a small gap below the image, so we reset the img to block-level to fix this. */
