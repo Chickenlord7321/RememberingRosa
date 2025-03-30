@@ -2,6 +2,22 @@
  * NAVBAR *
  **********/
 
+:root {
+	/* Colors */
+	--nav-bg-inactive: lightsteelblue;
+	--nav-bg-active: #122142;
+	--nav-fg-inactive: #000;
+	--nav-fg-active: #fff;
+
+	/* Animation/Transition speeds */
+	--nav-speed: 0.5s;
+
+	/* Sizes and padding/margin */
+	--nav-spacing: 5vmin;
+	--icon-size: 4rem;
+	--nav-radius: 1rem;
+}
+
 .nav-location {
 	top: 0;
 	right: 0;
@@ -29,6 +45,7 @@ nav {
 	content to scroll, which I remember was an issue from DIGI 220. */
 	max-height: calc(90vh - var(--nav-spacing) - var(--icon-size));
 	overflow-y: scroll;
+	text-overflow: ellipsis;
 
 	/* This hides the menu until the user clicks the hamburger icon */
 	clip-path: inset(0 0 0 100%);

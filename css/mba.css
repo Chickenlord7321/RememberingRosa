@@ -38,21 +38,13 @@
 }
 
 #video-slide {
-	border: 3px solid red;
-
 	width: 100vmin;
 	height: 100vmin;
-	padding: 2vw;
-	padding-top: calc(var(--nav-spacing) + var(--icon-size));
+	padding: 3vw;
 	display: grid;
 	grid-template-columns: 2fr 1fr 2fr;
-	gap: 2vw 0;
-}
-
-@media screen and (orientation: portrait) {
-	#video-slide {
-		padding-top: 2vw;
-	}
+	grid-template-rows: 1fr 1fr;
+	gap: 3vw 0;
 }
 
 #video-slide iframe {

@@ -6,27 +6,13 @@
 
 :root {
 	/* Colors! */
+	--ripple-color: #fff;
 	/* This is the same blue used by MBA on their website */
 	--mba-blue: #62b6f3;
-
-	/* Specific colors for active / inactive / links / etc... */
-	--nav-bg-inactive: lightsteelblue;
-	--nav-bg-active: #122142;
-	--nav-fg-inactive: #000;
-	--nav-fg-active: #fff;
-	--ripple-color: #fff;
+	
 	/* Fancy links */
-	--fancy-link-fg: #fff;
 	--fancy-link-bg-inactive: #fff;
 	--fancy-link-bg-active: var(--mba-blue);
-
-	/* Animation/Transition speeds! */
-	--nav-speed: 0.5s;
-
-	/* Navbar stuff! */
-	--nav-spacing: 5vmin;
-	--icon-size: 4rem;
-	--nav-radius: 1rem;
 }
 
 /* More color classes for easily applying text/background color */
@@ -41,13 +27,13 @@
  ***************/
 
 .fancy-link {
-	--underline-size: 0.1em;
+	--underline-size: 100%;
 	/* Reset stuff */
 	text-decoration: none;
 	display: inline-block;
 
-	color: var(--fancy-link-fg);
-	padding-bottom: 0.5rem;
+	color: transparent;
+	background-clip: text;
 	background-image: 
 		linear-gradient(to right, var(--fancy-link-bg-inactive), var(--fancy-link-bg-inactive)),
 		linear-gradient(to right, var(--fancy-link-bg-active), var(--fancy-link-bg-active));
@@ -58,7 +44,7 @@
 	background-position: 
 		right bottom, 
 		left bottom;
-	transition: background-size 0.3s ease-in-out;
+	transition: background-size 0.4s ease-in-out;
 }
 .fancy-link:hover {
 	background-size: 
@@ -80,7 +66,6 @@
 	background-color: rgba(0, 0, 0, 0.4);
 	/* Make the hero page's text container fill the remaining space left over by the ripple div */
 	flex: 1 1 0%;
-	min-width: 7em;
 	font-size: 3rem;
 	text-align: center;
 	/* Add enough padding for the h1 to be clear of the hamburger menu so that it doesn't get covered up */
@@ -88,6 +73,12 @@
 	/* Since different browsers will have slightly different breakpoints, we add a 
 		transition to make it seems less jarring. */
 	transition: padding-top 0.2s;
+}
+
+@media screen and (orientation: portrait) {
+	.hero-page header {
+		padding-top: 1em;
+	}
 }
 
 h1 {
@@ -113,8 +104,6 @@ h1 {
  ****************/
 
 body {
-	/* Number of columns for articles/footer */
-	--num-cols: 2;
 	background-color: #000;
 	color: #fff;
 }
@@ -139,24 +128,22 @@ main {
 
 article {
 	display: grid;
-	grid-template-columns: 6fr 4fr;
 	gap: 5%;
 	margin: 8rem 0;
 }
 
-article:nth-of-type(odd) {
-	grid-template-columns: 4fr 6fr;
-}
-
-/* Alternating layout on larger devices */
 @media screen and (width >= 1000px) {
-	article:nth-of-type(even) > section { order: +1; }
-}
-
-@media screen and (width < 1000px) {
 	article {
-		/* Overrides the odd-numbered article styling just above this */
-		grid-template-columns: 1fr !important;
+		grid-template-columns: 6fr 4fr;
+	}
+
+	article:nth-of-type(odd) {
+		grid-template-columns: 4fr 6fr;
+	}
+
+	/* Switches the order of the images and text */
+	article:nth-of-type(even) > section { 
+		order: +1; 
 	}
 }
 
