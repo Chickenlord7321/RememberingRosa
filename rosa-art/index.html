@@ -30,6 +30,8 @@ Last Update: 21 Mar 2025
 
 	<!-- Script for animating the hamburger menu -->
 	<script src="../js/jquery.nav_menu.js"></script>
+	<!-- Script for image modals -->
+	<script src="../js/jquery.modal.js"></script>
 
 	<!-- Universal stylesheet -->
 	<link rel="stylesheet" href="../css/universal.css">
@@ -80,114 +82,114 @@ Last Update: 21 Mar 2025
 
 <!-- HERO PAGE -->
 <section class="hero-page">
-	<section id="squaring-the-square"> 
-		<div id="s50">
+	<ul id="squaring-the-square"> 
+		<li id="s50">
 			<img src="../images/rosa-in-space-by-team-coral.webp" alt="Coral">
-		</div>
-		<div id="s42">
+		</li>
+		<li id="s42">
 			<img src="../images/rosa-in-space-by-team-atlantis.webp" alt="Atlantis">
-		</div>
-		<div id="s37">
+		</li>
+		<li id="s37">
 			<img src="../images/team-coral-round-2.webp" alt="Coral">
-		</div>
-		<div id="s35">
+		</li>
+		<li id="s35">
 			<img src="../images/team-atlantis-round-2.webp" alt="Atlantis">
-		</div>
-		<div id="s33">
+		</li>
+		<li id="s33">
 			<img src="../images/team-pirate-round-2.webp" alt="Pirate">
-		</div>
-		<div id="s29">
+		</li>
+		<li id="s29">
 			<img src="../images/team-poseidon-round-2.webp" alt="Poseidon">
-		</div>
-		<div id="s27">
+		</li>
+		<li id="s27">
 			<img src="../images/team-kraken-overtime-3.webp" alt="Kraken">
-		</div>
-		<div id="s25">
+		</li>
+		<li id="s25">
 			<img src="../images/team-kraken-overtime-2.webp" alt="Kraken">
-		</div>
-		<div id="s24">
+		</li>
+		<li id="s24">
 			<img src="../images/team-coral-round-1.webp" alt="Coral">
-		</div>
-		<div id="s19">
+		</li>
+		<li id="s19">
 			<img src="../images/team-atlantis-round-1.webp" alt="Atlantis">
-		</div>
-		<div id="s18">
+		</li>
+		<li id="s18">
 			<img src="../images/team-kraken-round-1.webp" alt="Kraken">
-		</div>
-		<div id="s17">
+		</li>
+		<li id="s17">
 			<img src="../images/team-poseidon-round-1.webp" alt="Poseidon">
-		</div>
-		<div id="s16">
+		</li>
+		<li id="s16">
 			<img src="../images/team-riptide-round-1.webp" alt="Riptide">
-		</div>
-		<div id="s15">
+		</li>
+		<li id="s15">
 			<img src="../images/team-neptune-round-1.webp" alt="Neptune">
-		</div>
-		<div id="s11">
+		</li>
+		<li id="s11">
 			<img src="../images/team-pirate-round-1.webp" alt="Pirate">
-		</div>
-		<div id="s9">
+		</li>
+		<li id="s9">
 			<img src="../images/team-plankton-round-1.webp" alt="Plankton">
-		</div>
-		<div id="s8">
+		</li>
+		<li id="s8">
 			<img src="../images/team-kraken-overtime-1.webp" alt="Kraken">
-		</div>
-		<div id="s7">
+		</li>
+		<li id="s7">
 			<img src="../images/team-neptune-overtime-2.webp" alt="Neptune">
-		</div>
-		<div id="s6">
+		</li>
+		<li id="s6">
 			<img src="../images/team-neptune-overtime.webp" alt="Neptune">
-		</div>
-		<div id="s4">
+		</li>
+		<li id="s4">
 			<img src="../images/rosa-in-space-by-team-coral.webp" alt="Coral">
-		</div>
-		<div id="s2">
+		</li>
+		<li id="s2">
 			<img src="../images/rosa-in-space-by-team-atlantis.webp" alt="Atlantis">
-		</div>
-	</section>
+		</li>
+	</ul>
+
+	<!-- This modal does not display until the user clicks one of the above images -->
+	<div id="modal">
+		<a id="close" href="javascript:void(0);">&times;</a>
+		<img src="tbd" alt="">
+		<p id="caption"></p>
+	</div>
+
 	<header>
+		<a id="logo" href="http://rememberingrosa.com"><i class="fa-solid fa-otter"></i> Remembering Rosa</a>
 		<h1 class="white-fg">Rosa Art Gallery</h1>
-		<ul>
-			<li><a class="fancy-link" href="#gallery2024">2024 Gallery</a></li>
-			<li><a class="fancy-link" href="#gallery2023">2023 Gallery</a></li>
-			<li><a class="fancy-link" href="#gallery2022">2022 Gallery</a></li>
-			<li><a class="fancy-link" href="#gallery2021">2021 Gallery</a></li>
-		</ul>
 	</header>
 </section>
 
-<main role="img">
-	<h1>Rosa Art</h1>
-
+<main>
+	<h2>Art Created by the DougDoug Community In Honor of Rosa</h2>
 	<section class="gallery">
-		<h2>Art Created by the DougDoug Community In Honor of Rosa</h2>
-
 		<!-- Column 1 -->
 		<ul class="col">
 			<li>
 				<img src="../images/among-the-stars-by-potaattiss.webp" alt="among the stars by potaattiss">
-				<div>
+				<div class="art-credit">
 					<h3>Among the Stars</h3>
 					<a href="https://www.dougdoug.com/celebratingrosaslife100?lightbox=dataItem-m09gm2xw16" target="_blank">by potaattiss &mdash; 2024</a>
 				</div>
 			</li>
 			<li>
 				<img src="../images/happy-birthday-rosa-by-dipperpictures.webp" alt="Happy birthday, Rosa by dipperpictures">
-				<div>
+				<div class="art-credit">
 					<h3>Happy Birthday, Rosa</h3>
 					<a href="https://www.dougdoug.com/celebratingrosaslife100?lightbox=dataItem-m09gm2ya33" target="_blank">by dipperpictures &mdash; 2024</a>
 				</div>
 			</li>
 			<li>
 				<img src="../images/glory-days-by-artlinxin.webp" alt="glory days by artlinxin">
-				<div>
+				<div class="art-credit">
 					<h3>Glory Days</h3>
 					<a href="https://linktr.ee/Maybelle2519" target="_blank">by artlinxin &mdash; 2023</a>
 				</div>
 			</li>
 			<li>
 				<img src="../images/acceptance-of-the-shrimp-by-shutupbabyiknow.webp" alt="Acceptance of the shrimp by Shuupbabiiknow">
-				<div>
+				<div class="art-credit">
 					<h3>Acceptance of the Shrimp</h3>
 					<a href="http://www.instagram.com/freakyf.arts" target="_blank">by Shutupbabyiknow &mdash; 2024</a>
 				</div>
@@ -198,7 +200,7 @@ Last Update: 21 Mar 2025
 		<ul class="col">
 			<li>
 				<img src="../images/rosas-legacy-by-kezral.webp" alt="rosa's legacy by kezral">
-				<div>
+				<div class="art-credit">
 					<h3>Rosa's Legacy</h3>
 					<a href="https://www.dougdoug.com/celebratingrosaslife100?lightbox=dataItem-m09gm2yb24" target="_blank">by kezral &mdash; 2024</a>
 				</div>
@@ -213,21 +215,21 @@ Last Update: 21 Mar 2025
 						referrerpolicy="strict-origin-when-cross-origin" 
 						allowfullscreen>
 				</iframe>
-				<div>
+				<div class="art-credit">
 					<h3>Long Live the Queen</h3>
 					<a href="https://www.youtube.com/watch?v=g-m8dGtZJcY" aria-label="Watch on YouTube" target="_blank">by The Recovery System &mdash; 2024</a>
 				</div>
 			</li>
 			<li>
 				<img src="../images/rosa-ascends-by-divine-princess.webp" alt="Rosa Ascends by Divine Princess">
-				<div>
+				<div class="art-credit">
 					<h3>Rosa Ascends</h3>
 					<a href="https://www.instagram.com/divineprincessart/" target="_blank">by Divine Princess &mdash; 2024</a>
 				</div>
 			</li>
 			<li>
 				<img src="../images/her-majesty-by-shusheija.webp" alt="Her Majesty by Shusheija">
-				<div>
+				<div class="art-credit">
 					<h3>Her Majesty</h3>
 					<a href="https://www.instagram.com/royalkelpie/" target="_blank">by Shusheija &mdash; 2024</a>
 				</div>
@@ -238,28 +240,28 @@ Last Update: 21 Mar 2025
 		<ul class="col">
 			<li>
 				<img src="../images/rosa-passing-on-the-support-by-vall_eris.webp" alt="Rosa passing on the support by vall_eris">
-				<div>
+				<div class="art-credit">
 					<h3>Rosa Passing On The Support</h3>
 					<a href="https://drive.google.com/file/d/1FaNCC7BUBgwCCnm5NZyzeYIMFZpgUzH1/view?usp=sharing" target="_blank">by vall_eris &mdash; 2024</a>
 				</div>
 			</li>
 			<li>
 				<img src="../images/keep-on-floating-by-chocomello_0303.webp" alt="keep on floating by chocomello_0303">
-				<div>
+				<div class="art-credit">
 					<h3>Keep On Floating</h3>
 					<a href="https://www.dougdoug.com/celebratingrosaslife100?lightbox=dataItem-m09gm2yb26" target="_blank">by chocomello_0303 &mdash; 2024</a>
 				</div>
 			</li>
 			<li>
 				<img src="../images/needle-felted-rosa-and-mugmug-by-cuddlyrowlet.webp" alt="Needle felted Rosa and MugMug by cuddlyrowlet">
-				<div>
+				<div class="art-credit">
 					<h3>Needle Felted Rosa and MugMug</h3>
 					<a href="https://www.dougdoug.com/celebratingrosaslife100?lightbox=dataItem-m09gm2y427" target="_blank">by cuddlyrowlet &mdash; 2024</a>
 				</div>
 			</li>
 			<li>
 				<img src="../images/rosa-and-her-special-shell-by-straykid007.webp" alt="rosa and her special shell by straykid007">
-				<div>
+				<div class="art-credit">
 					<h3>Rosa and Her Special Shell</h3>
 					<a href="https://www.dougdoug.com/celebratingrosaslife100?lightbox=dataItem-m09gm2xt7" target="_blank">by straykid007 &mdash; 2024</a>
 				</div>
@@ -270,28 +272,28 @@ Last Update: 21 Mar 2025
 		<ul class="col">
 			<li>
 				<img src="../images/great-sea-in-the-sky-by-bobab00b.webp" alt="great sea in the sky by bobab00b">
-				<div>
+				<div class="art-credit">
 					<h3>Great Sea in the Sky</h3>
 					<a href="https://www.dougdoug.com/celebratingrosaslife100?lightbox=dataItem-m09gm2y544" target="_blank">by bobob00b &mdash; 2024</a>
 				</div>
 			</li>
 			<li>
 				<img src="../images/dive-high-by-artlinxin.webp" alt="Dive high by artlinxin">
-				<div>
+				<div class="art-credit">
 					<h3>Dive High</h3>
 					<a href="https://linktr.ee/Maybelle2519" target="_blank">by artlinxin &mdash; 2024</a>
 				</div>
 			</li>
 			<li>
 				<img src="../images/our-beloved-rosa-by-olliethere.webp" alt="Our beloved Rosa by OlleThere">
-				<div>
+				<div class="art-credit">
 					<h3>Our Beloved Rosa</h3>
 					<a href="https://www.dougdoug.com/celebratingrosaslife100?lightbox=dataItem-m09gm2xx38" target="_blank">by OllieThere &mdash; 2024</a>
 				</div>
 			</li>
 			<li>
 				<img src="../images/swimming-blissfully-by-ozm0th.webp" alt="swimming blissfully by ozm0th">
-				<div>
+				<div class="art-credit">
 					<h3>Swimming Blissfully</h3>
 					<a href="" target="_blank">by ozm0th</a>	<!-- ! Add source here -->
 				</div>
@@ -307,13 +309,13 @@ Last Update: 21 Mar 2025
 	<!-- DougDoug's Twitch Channel -->
 	<a id="twitch" class="white-bg"  href="https://www.twitch.tv/dougdoug" target="_blank">
 		<!-- Twitch icon from Font Awesome -->
-		<i class="fa-brands fa-twitch fa-xl" aria-hidden="true" role="img"></i>Doug&shy;Doug on Twitch
+		<i class="fa-brands fa-twitch fa-xl" aria-hidden="true" role="img"></i>DougDoug on Twitch
 	</a>
 	
 	<!-- DougDoug's YouTube Channel -->
-	<a id="yt" class="white-bg"  href="https://www.youtube.com/user/Gloudas"target="_blank">
+	<a id="yt" class="white-bg"  href="https://www.youtube.com/user/Gloudas" target="_blank">
 		<!-- YouTube icon from Font Awesome -->
-		<i class="fa fa-youtube-play fa-xl" aria-hidden="true" role="img"></i>Doug&shy;Doug on YouTube
+		<i class="fa fa-youtube-play fa-xl" aria-hidden="true" role="img"></i>DougDoug on YouTube
 	</a>
 
 	<h3 class="white-fg">Monterey Bay Aquarium</h3>
@@ -345,7 +347,7 @@ Last Update: 21 Mar 2025
 	</p>
 
 	<!-- Copyright -->
-	<p id="copyright" class="white-text">© Caleb Bronn 2025</a>
+	<p id="copyright" class="white-text">© Caleb Bronn 2025</p>
 </footer>
 
 </body>

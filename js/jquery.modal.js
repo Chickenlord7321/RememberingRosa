@@ -7,15 +7,18 @@ $(document).ready(function () {
 		$("#modal > img").attr("src", img.attr("src"));
 		$("#modal > img").attr("alt", img.attr("alt"));
 
-		// Add the alt text of whichever image the user clicked on
+		// Change caption so that it lists the team who made the art in the modal
 		$("#caption").text(function (i, originalText) {
 			return "By Team " + img.attr("alt");
 		}); 
 		$("#modal").toggle();
 	});
 
-	// Close modal when user clicks the X icon
+	// Close modal when user clicks the X icon or the image inside the modal
 	$("#close").click(function () {
 		$("#modal").toggle();
 	});
+	$("#modal > img").click(function () {
+		$("#modal").toggle();
+	})
 });

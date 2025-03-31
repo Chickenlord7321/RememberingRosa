@@ -3,16 +3,19 @@
  **********/
 
 footer {
-	padding: 40px 25%;
+	padding: 40px 10%;
 	display: grid;
-	grid-template-columns: repeat(var(--num-cols), 1fr);
 	gap: 0 10%;
 	text-align: center;
 	background-color: #122142;
 }
 
-@media screen and (width < 550px) {
-	footer { padding: 40px 10%; }
+/* Layout for footer buttons on wide screens */
+@media screen and (width >= 850px) {
+	footer {
+		padding: 40px 25%;
+		grid-template-columns: 1fr 1fr;
+	}
 }
 
 footer > * {
@@ -58,7 +61,7 @@ a i { margin-right: 0.5em; }
 .fa-location-dot { color: #34A853; }
 
 /* Button layout on wide screens */
-@media screen and (width >= 1000px) {
+@media screen and (width >= 850px) {
 	#twitch {
 		grid-column: 1 / span 1;
 		grid-row: 2 / span 1;
@@ -91,7 +94,7 @@ h4 + p{
 	order: +1;
 }
 
-@media screen and (width < 1000px) {
+@media screen and (width < 850px) {
 	footer h3 {
 		display: none;
 	}

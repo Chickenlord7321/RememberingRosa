@@ -1,3 +1,7 @@
+h2 {
+	text-align: center;
+}
+
 /*****************
  * GALLERY RULES *
  *****************/
@@ -25,23 +29,10 @@
 	gap: var(--gallery-gap);
 }
 
-.gallery > h2 {
-	grid-column: 1 / span var(--gallery-num-cols);
-	text-align: center;
-}
-
 .col {
 	display: flex;
 	flex-flow: column nowrap;
 	gap: var(--gallery-gap);
-}
-
-img,
-iframe {
-  display: block;
-  width: 100%;
-  /* height: 100%; */
-  /* object-fit: cover; */
 }
 
 .col > li {
@@ -49,13 +40,12 @@ iframe {
 	border: 2px solid white;
 }
 
-.col > li > div {
-	/* Position at bottom left */
+.col .art-credit {
+	/* Position at the bottom */
 	position: absolute;
 	bottom: 0;
-	left: 0;
 	/* Cosmetics */
-	padding: 5px;
+	padding: 10px;
 	background-color: rgba(0, 0, 0, 0.5);
 	color: #fff;
 	width: 100%;
@@ -63,8 +53,77 @@ iframe {
 	opacity: 0;
 	transition: all 0.3s ease-in-out;
 }
-.col li:hover > div {
+.col li:hover > .art-credit {
 	opacity: 1;
+}
+
+img,
+iframe {
+	display: block;
+	width: 100%;
+}
+
+.gallery a {
+	text-decoration: none;
+}
+
+
+/****************
+ * IMAGE MODALS *
+ ****************/
+
+#modal {
+	display: none;	/* hidden by default */
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	padding-top: 50px;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;	/* if needed */
+	background-color: rgba(0,0,0,0.9);
+}
+
+#modal > img {
+	margin: auto;
+	width: 80%;
+	max-width: max-content;
+	max-height: 95%;
+	object-fit: contain;
+}
+
+#modal #caption {
+	text-align: center;
+	color: #fff;
+	padding: 1em 0;
+}
+
+#modal > img,
+#modal #caption {
+	animation: zoom 0.5s ease-in;
+}
+
+@keyframes zoom {
+	from { transform:scale(0) } 
+	to { transform:scale(1) }
+}
+
+#modal #close {
+	position: absolute;
+	top: 0;
+	right: 5vw;
+
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	font-size: max(2.5rem, 4vw);
+	font-weight: 700;
+	transition: all 0.3s;
+}
+#modal #close:hover,
+#modal #close:focus {
+	color: var(--mba-blue);
 }
 
 
@@ -104,21 +163,23 @@ iframe {
 	width: 100vmin;
 	height: 100vmin;
 	position: relative;		/* for children with absolute position */
-	overflow: hidden;
 	border: 2px solid white;
 }
 
-
-#squaring-the-square div {
+#squaring-the-square li {
 	border: 2px solid white;
 	position: absolute;
-	overflow: hidden;
 }
 
-#squaring-the-square img {
+#squaring-the-square li > img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	transition: all 0.3s;
+}
+
+#squaring-the-square li > img:hover {
+	opacity: 0.7;
 }
 
 /* Size and positioning */

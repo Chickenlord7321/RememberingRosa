@@ -9,6 +9,31 @@
 	--ripple-color: #fff;
 	/* This is the same blue used by MBA on their website */
 	--mba-blue: #62b6f3;
+	--oxford-blue: #122142;
+	--blue-green: #3E93B5;
+	--silver-lake-blue: #5885C2;
+	--tangerine: #EA8A21;
+	--saffron: #EEC21E;
+	--verdigris: #3B9EA0;
+	--zomp: #3D9C81;
+	--mantis: #63C24E;
+	--sgbus-green: #80D446;
+	--straw: #DEE267;
+
+	/* A linear gradient that matches the palette of the backdrop art by ozm0th */
+	--rosa-gradient: linear-gradient(120deg,
+						var(--oxford-blue),
+						var(--blue-green), 
+						var(--silver-lake-blue), 
+						var(--tangerine), 
+						var(--saffron) 49% 51%,
+						var(--tangerine), 
+						var(--verdigris), 
+						var(--zomp), 
+						var(--mantis), 
+						var(--sgbus-green), 
+						var(--straw)
+					);
 	
 	/* Fancy links */
 	--fancy-link-bg-inactive: #fff;
@@ -27,12 +52,14 @@
  ***************/
 
 .fancy-link {
+	/*! remove this variable if I'm happy with this design */
 	--underline-size: 100%;
 	/* Reset stuff */
 	text-decoration: none;
 	display: inline-block;
 
 	color: transparent;
+	-webkit-background-clip: text;
 	background-clip: text;
 	background-image: 
 		linear-gradient(to right, var(--fancy-link-bg-inactive), var(--fancy-link-bg-inactive)),
@@ -47,6 +74,7 @@
 	transition: background-size 0.4s ease-in-out;
 }
 .fancy-link:hover {
+	color: transparent;
 	background-size: 
 		0% var(--underline-size),
 		100% var(--underline-size);
@@ -63,6 +91,7 @@
 }
 
 .hero-page header {
+	position: relative;		/* for children */
 	background-color: rgba(0, 0, 0, 0.4);
 	/* Make the hero page's text container fill the remaining space left over by the ripple div */
 	flex: 1 1 0%;
@@ -81,11 +110,6 @@
 	}
 }
 
-h1 {
-	font-size: max(4vw, 6vh);
-	padding: 0 5px;
-}
-
 .hero-page img {
 	/* Since <img> elements are inline by default, they are treated as "text", which means they have line height.
 	This creates a small gap below the image, so we reset the img to block-level to fix this. */
@@ -99,6 +123,40 @@ h1 {
 	object-position: 0 0;
 }
 
+/********
+ * LOGO *
+ ********/
+
+#logo {
+	position: absolute;
+	top: 1em;
+	left: 1em;
+	text-decoration: none;
+	font-size: 1.3rem;
+	color: var(--mba-blue);
+}
+
+#logo i {
+	font-size: 1.5em;
+	margin-right: 5px;
+	/*! vertical-align: middle; */
+}
+
+h1 {
+	font-size: max(4vw, 6vh);
+	padding: 0 5px;
+	/* Using inline here maintains the background across multiple lines */
+	/*! display: inline; */
+	background: url("../images/swimming-blissfully-by-ozm0th.webp") no-repeat 80% 60%;
+	background-size: auto;
+	color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+
+	/* Adding a bit of shadow around the text makes it stand out against background images */
+	filter: drop-shadow(5px 5px 3px #000);
+}
+
 /****************
  * MAIN CONTENT *
  ****************/
@@ -108,11 +166,6 @@ body {
 	color: #fff;
 }
 
-/* Switch to 1-column layout on devices smaller than 1000px */
-@media screen and (width < 1000px) {
-	body { --num-cols: 1; }
-}
-
 main {
 	padding: 8rem 15%;
 	background-image: url("../images/swimming-blissfully-by-ozm0th.webp");
@@ -120,6 +173,14 @@ main {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: 50% 80%;
+}
+
+a {
+	color: var(--mba-blue);
+	transition: all 0.3s;
+}
+a:hover {
+	color: var(--tangerine);
 }
 
 /************************************

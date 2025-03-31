@@ -27,15 +27,14 @@
 }
 
 .hero-page header {
-	position: relative;
 	z-index: +1;
 }
 
-@media screen and (width < 132vmin) {
+/* @media screen and (width < 128vmin) {
 	.hero-page header {
 		order: +1;
 	}
-}
+} */
 
 #video-slide {
 	width: 100vmin;
@@ -47,15 +46,15 @@
 	gap: 3vw 0;
 }
 
-#video-slide iframe {
-	animation: slideVideo 2s ease-in-out;
-}
-
 #video-slide iframe:first-of-type {
 	grid-column: 1 / span 2;
 }
 #video-slide iframe:last-of-type {
 	grid-column: 2 / span 2;
+}
+
+#video-slide iframe {
+	animation: slideVideo 2s ease-in-out;
 }
 
 @keyframes slideVideo {
@@ -65,4 +64,15 @@
 	to {
 		margin-left: 0;
 	}
+}
+
+/* So, I'm having this issue on the MBA page that I cannot for the life of me understand.
+	When the page loads, there's a bizarre invisible box covering part of the drop-shadow
+	effect on the title. If you comment out the code below this, refresh the page, and look
+	at the 'y' in 'Monterey', you'll see what I mean.
+
+	AND FOR SOME FUCKIN REASON ADDING AN INVISIBLE BORDER GETS RID OF IT???????
+*/
+.hero-page > * {
+	border: 1px solid transparent;
 }
