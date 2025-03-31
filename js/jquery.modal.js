@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	// Open modal and add content when user clicks on an image
-	$("#squaring-the-square li > img").click(function () {
+	$("img.open-in-modal").click(function () {
 		let img = $(this);
 		
 		// Set the image source/alt to whichever image the user clicked on

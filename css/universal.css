@@ -95,7 +95,7 @@
 	background-color: rgba(0, 0, 0, 0.4);
 	/* Make the hero page's text container fill the remaining space left over by the ripple div */
 	flex: 1 1 0%;
-	font-size: 3rem;
+	font-size: min(3rem, 8vw);
 	text-align: center;
 	/* Add enough padding for the h1 to be clear of the hamburger menu so that it doesn't get covered up */
 	padding-top: calc(var(--nav-spacing) + var(--icon-size));
@@ -105,7 +105,7 @@
 	margin-top: 1em;
 }
 
-.hero-page img {
+.hero-page .hero-img {
 	/* Since <img> elements are inline by default, they are treated as "text", which means they have line height.
 	This creates a small gap below the image, so we reset the img to block-level to fix this. */
 	display: block;
@@ -136,6 +136,10 @@
 	margin-right: 5px;
 	/*! vertical-align: middle; */
 }
+
+/***********
+ * HEADING *
+ ***********/
 
 h1 {
 	font-size: max(4vw, 6vh);

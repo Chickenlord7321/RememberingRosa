@@ -61,7 +61,7 @@
 	/* To make the animation smoother, we actually have to use 2 animations. The first one 
 	is a delay that does literally nothing except make the background black for 2.5 seconds. 
 	The second animation fades out the background to reveal the picture of Rosa underneath. */
-	animation: delayFadeOut 2.5s linear 0s , 
+	animation: delayFadeOut 2.5s linear 0s, 
 				fadeOut var(--ripple-speed) ease-in 2.5s;
 }
 

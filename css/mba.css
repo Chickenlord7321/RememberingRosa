@@ -50,22 +50,27 @@
 
 #video-slide iframe:first-of-type {
 	grid-column: 1 / span 2;
+	animation: delay 0.3s linear 0s,
+				slideVideoIn 2s ease-out 0.3s;
 }
 #video-slide iframe:last-of-type {
 	grid-column: 2 / span 2;
+	animation: slideVideoIn 2s ease-out 0s;
 }
 
-#video-slide iframe {
-	animation: slideVideo 2s ease-in-out;
-}
-
-@keyframes slideVideo {
+@keyframes slideVideoIn {
 	from {
 		margin-left: -100vw;
 	}
 	to {
 		margin-left: 0;
 	}
+}
+
+/* Delays the video from displaying until the slideVideoIn animation is ready to go */
+@keyframes delay {
+	from { opacity: 0; }
+	to { opacity: 0; }
 }
 
 /* So, I'm having this issue on the MBA page that I cannot for the life of me understand.

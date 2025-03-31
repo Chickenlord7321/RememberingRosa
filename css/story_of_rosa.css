@@ -19,27 +19,85 @@
 	}
 }
 
+.hero-img {
+	background-position: 20% 50%;
+}
+
 #img-nav {
 	width: 100vmin;
 	height: 100vmin;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-evenly;
 }
 
 #img-nav li {
-	width: 60%;
-	height: 30%;
-	margin: 0 2vw;
+	width: 40%;
+	height: 25%;
+	margin: 0 10%;
+	box-shadow: 10px 10px 10px 0px #000;
+	border: 2px solid var(--mba-blue);
+
+	position: relative;		/* for children and animation */
 }
 
 #img-nav li:nth-of-type(even) {
 	margin-right: auto;
+	transform: rotate(-10deg);
+		animation: imgSlideInEven 1.5s ease-out 0s;
 }
 
 #img-nav li:nth-of-type(odd) {
 	margin-left: auto;
+	transform: rotate(10deg);
+		animation: imgSlideInOdd 1.5s ease-out 0s;
+}
+
+@keyframes imgSlideInEven {
+	from {
+		left: -100%;
+		transform: rotate(-90deg);
+	}
+	to {
+		left: 0;
+		transform: rotate(-10deg);
+	}
+}
+
+@keyframes imgSlideInOdd {
+	from {
+		left: -100%;
+		transform: rotate(90deg);
+	}
+	to {
+		left: 0;
+		transform: rotate(10deg);
+	}
+}
+
+#img-nav li p {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 0 0.5em;
+	text-align: center;
+	font-size: min(5vw, 2rem);
+	color: #fff;
+	text-shadow: 5px 5px 5px #000;
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+}
+
+/* On screens that support hovering, allow the text to display when the user hovers over the image */
+@media screen and (hover: hover) {
+	#img-nav li:hover p {
+		color: #fff;
+		opacity: 1;
+	}
 }
 
 #img-nav img {
-	display: block;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
