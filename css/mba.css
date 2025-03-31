@@ -27,14 +27,16 @@
 }
 
 .hero-page header {
+	min-width: 16rem;
 	z-index: +1;
+	background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* @media screen and (width < 128vmin) {
+@media screen and (width < 1060px) {
 	.hero-page header {
 		order: +1;
 	}
-} */
+}
 
 #video-slide {
 	width: 100vmin;
@@ -72,6 +74,8 @@
 	at the 'y' in 'Monterey', you'll see what I mean.
 
 	AND FOR SOME FUCKIN REASON ADDING AN INVISIBLE BORDER GETS RID OF IT???????
+	
+	WHY??????
 */
 .hero-page > * {
 	border: 1px solid transparent;

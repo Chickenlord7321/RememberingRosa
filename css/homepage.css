@@ -45,14 +45,6 @@
 	}
 }
 
-/* Change padding when the hero page text moves below the image. There's no way to check this with calc(), 
-	variables, or anything else I could find. So 128vmin is just an educated guess that seems to work. */
-@media screen and (width < 128vmin) {
-	.hero-page header {
-		padding-top: 1em;
-	}
-}
-
 /***************************
  * RIPPLE ANIMATION EFFECT *
  ***************************/
@@ -129,4 +121,9 @@
 
 .hero-page header li {
 	margin-top: 1em;
+}
+
+/* Since the title */
+#logo {
+	display: none;
 }

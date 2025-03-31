@@ -1,0 +1,46 @@
+/* Applies a shadow over the left side of the image to blend it with the blakc background color of the <body> */
+.shadow-right {
+	/* Remove img from document flow and position in top left corner, behind everything else */
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+/* Apply shadow only on wide screens */
+@media screen and (orientation: landscape){
+	.shadow-right::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100vmin;
+		box-shadow: inset -100px 0 100px #000;
+	}
+}
+
+#img-nav {
+	width: 100vmin;
+	height: 100vmin;
+}
+
+#img-nav li {
+	width: 60%;
+	height: 30%;
+	margin: 0 2vw;
+}
+
+#img-nav li:nth-of-type(even) {
+	margin-right: auto;
+}
+
+#img-nav li:nth-of-type(odd) {
+	margin-left: auto;
+}
+
+#img-nav img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

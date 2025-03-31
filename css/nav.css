@@ -31,7 +31,7 @@ nav {
 	z-index: 100;
 	/* We set a max width so the nav menu doesn't become so big that users 
 	can't scroll on mobile screens */
-	max-width: 50vw;
+	max-width: 60vw;
 }
 
 #menu {

@@ -99,15 +99,10 @@
 	text-align: center;
 	/* Add enough padding for the h1 to be clear of the hamburger menu so that it doesn't get covered up */
 	padding-top: calc(var(--nav-spacing) + var(--icon-size));
-	/* Since different browsers will have slightly different breakpoints, we add a 
-		transition to make it seems less jarring. */
-	transition: padding-top 0.2s;
 }
 
-@media screen and (orientation: portrait) {
-	.hero-page header {
-		padding-top: 1em;
-	}
+.hero-page header li {
+	margin-top: 1em;
 }
 
 .hero-page img {
@@ -146,9 +141,9 @@ h1 {
 	font-size: max(4vw, 6vh);
 	padding: 0 5px;
 	/* Using inline here maintains the background across multiple lines */
-	/*! display: inline; */
-	background: url("../images/swimming-blissfully-by-ozm0th.webp") no-repeat 80% 60%;
-	background-size: auto;
+	display: inline;
+	background: url("../images/swimming-blissfully-by-ozm0th.webp") no-repeat 70% 75%;
+	background-size: 150%;
 	color: transparent;
 	-webkit-background-clip: text;
 	background-clip: text;
@@ -175,6 +170,13 @@ main {
 	background-position: 50% 80%;
 }
 
+	/* TODO: maybe keep this? Feel like it conflicts with the h1 title */
+/* @media screen and (width < 700px) {
+	main {
+		background-image: url("../images/among-the-stars-by-potaattiss.webp");
+	}
+} */
+
 a {
 	color: var(--mba-blue);
 	transition: all 0.3s;
@@ -195,11 +197,11 @@ article {
 
 @media screen and (width >= 1000px) {
 	article {
-		grid-template-columns: 6fr 4fr;
+		grid-template-columns: 6fr 5fr;
 	}
 
 	article:nth-of-type(odd) {
-		grid-template-columns: 4fr 6fr;
+		grid-template-columns: 5fr 6fr;
 	}
 
 	/* Switches the order of the images and text */
