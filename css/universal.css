@@ -56,14 +56,17 @@
 	--underline-size: 100%;
 	/* Reset stuff */
 	text-decoration: none;
-	display: inline-block;
 
+	display: inline;
 	color: transparent;
 	-webkit-background-clip: text;
 	background-clip: text;
+	/* background-image: 
+		linear-gradient(to right, var(--fancy-link-bg-inactive), var(--fancy-link-bg-inactive)),
+		linear-gradient(to right, var(--fancy-link-bg-active), var(--fancy-link-bg-active)); */
 	background-image: 
 		linear-gradient(to right, var(--fancy-link-bg-inactive), var(--fancy-link-bg-inactive)),
-		linear-gradient(to right, var(--fancy-link-bg-active), var(--fancy-link-bg-active));
+		var(--rosa-gradient);
 	background-repeat: no-repeat, no-repeat;
 	background-size: 
 		100% var(--underline-size),
@@ -95,14 +98,17 @@
 	background-color: rgba(0, 0, 0, 0.4);
 	/* Make the hero page's text container fill the remaining space left over by the ripple div */
 	flex: 1 1 0%;
-	font-size: min(3rem, 8vw);
+	font-size: min(2.2rem, 6vw);
 	text-align: center;
 	/* Add enough padding for the h1 to be clear of the hamburger menu so that it doesn't get covered up */
-	padding-top: calc(var(--nav-spacing) + var(--icon-size));
+	padding-top: calc(var(--nav-spacing) + var(--icon-size) + 1em);
+	padding-bottom: 2rem;
 }
 
-.hero-page header li {
-	margin-top: 1em;
+.hero-page header ul {
+	display: grid;
+	gap: 2em;
+	margin-top: 2em;
 }
 
 .hero-page .hero-img {
@@ -134,7 +140,6 @@
 #logo i {
 	font-size: 1.5em;
 	margin-right: 5px;
-	/*! vertical-align: middle; */
 }
 
 /***********
@@ -144,10 +149,13 @@
 h1 {
 	font-size: max(4vw, 6vh);
 	padding: 0 5px;
+	margin-bottom: 2em;
 	/* Using inline here maintains the background across multiple lines */
 	display: inline;
-	background: url("../images/swimming-blissfully-by-ozm0th.webp") no-repeat 70% 75%;
-	background-size: 150%;
+	/* background: url("../images/swimming-blissfully-by-ozm0th.webp") no-repeat 70% 75%; */
+	background: var(--rosa-gradient) no-repeat center;
+	/* background-size: 150%; */
+	background-size: 100%;
 	color: transparent;
 	-webkit-background-clip: text;
 	background-clip: text;
@@ -174,7 +182,22 @@ main {
 	background-position: 50% 80%;
 }
 
-	/* TODO: maybe keep this? Feel like it conflicts with the h1 title */
+main > h2 {
+	margin: auto;
+	width: 30%;
+	font-size: 2.5rem;
+	color: #fff;
+	filter: drop-shadow(5px 5px 5px #000);
+	border-bottom: 2px solid #fff;
+}
+
+@media screen and (width < 700px) {
+	main > h2 {
+		width: 100%;
+	}
+}
+
+/* TODO: maybe keep this? Feel like it conflicts with the h1 title */
 /* @media screen and (width < 700px) {
 	main {
 		background-image: url("../images/among-the-stars-by-potaattiss.webp");
@@ -199,6 +222,10 @@ article {
 	margin: 8rem 0;
 }
 
+article > * {
+	box-shadow: 5px 5px 10px #000;
+}
+
 @media screen and (width >= 1000px) {
 	article {
 		grid-template-columns: 6fr 5fr;
@@ -217,29 +244,54 @@ article {
 article > section, 
 article > div {
 	position: relative;		/* for children with absolute positioning */
-	background-color: #000;
-	/* background-image: linear-gradient(to right bottom, #000000, #080606, #0f0c0a, #13110e, #151612); */
+	/* background-color: #000; */
+	background-image: linear-gradient(to right bottom, #000000, #080606, #0f0c0a, #13110e, #151612);
+ 	/* background-image: linear-gradient(to bottom, #000000, #0d0c0d, #151516, #1c1c1d, #222324); */
+	/* background-image: linear-gradient(to right bottom, #000000, #122142); */
 	border-radius: 1em;
-	padding: 2em;
+	padding: min(10%, 2rem);
+
+	/* Font styling */
+	font-size: 1.2rem;
+	line-height: normal;
 }
 
-article > section::before {
+article section::before {
 	content: 'Chapter 1';
 	position: absolute;
-	top: -1em;
+	top: -1.2em;
 	left: -1em;
 	padding: 0.5em;
-	border-radius: 0.5em;
 	font-size: 1.5rem;
 	background-color: #fff;
 	color: #000;
+	clip-path: polygon(
+		10px 0,
+		100% 0,
+		100% calc(100% - 10px),
+		calc(100% - 10px) 100%,
+		0 100%,
+		0 10px
+	);
 }
 
 article h2 {
+	width: fit-content;
+	margin: 0 auto 1rem;
+	font-size: 2rem;
 	text-align: center;
-	margin-bottom: 1em;
+	color: var(--mba-blue);
 }
 
 article img {
 	display: block;
+	width: 100%;
+	height: auto;
+	margin: auto;
+}
+
+article iframe,
+article video {
+	display: block;
+	margin: 0 auto;
 }

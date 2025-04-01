@@ -25,6 +25,16 @@ iframe {
 	max-height: 100%;
 }
 
+/* Code that makes iframes automatically resize themselves. iframes are pretty tricky, 
+	since they don't behave like <img> or <video> elements. This StackOverflow, however,
+	explains the best way to resize them:
+	https://stackoverflow.com/questions/8117761/how-can-i-make-an-iframe-resizable 
+*/
+iframe {
+	resize: both;
+	overflow: auto;
+}
+
 /* <address> elements are italic by default */
 address {
 	font-style: normal;

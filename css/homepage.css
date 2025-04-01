@@ -114,16 +114,8 @@
  * HERO PAGE TEXT STYLING *
  **************************/
 
-.hero-page header ul {
-	list-style: none;
-	margin: 1em;
-}
-
-.hero-page header li {
-	margin-top: 1em;
-}
-
-/* Since the title */
+/* Since the title says the same thing, we don't need the logo. It also 
+	kinda looks distracting on this specific page ngl */
 #logo {
 	display: none;
 }

@@ -68,6 +68,7 @@ nav {
 
 #hamburger {
 	background-color: var(--nav-bg-inactive);
+	background: var(--nav-bg-inactive) no-repeat center;
 	color: var(--nav-fg-inactive);
 	border-radius: var(--nav-radius);
 

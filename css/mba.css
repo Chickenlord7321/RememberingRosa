@@ -51,11 +51,11 @@
 #video-slide iframe:first-of-type {
 	grid-column: 1 / span 2;
 	animation: delay 0.3s linear 0s,
-				slideVideoIn 2s ease-out 0.3s;
+				slideVideoIn 1.5s ease-out 0.3s;
 }
 #video-slide iframe:last-of-type {
 	grid-column: 2 / span 2;
-	animation: slideVideoIn 2s ease-out 0s;
+	animation: slideVideoIn 1.5s ease-out 0s;
 }
 
 @keyframes slideVideoIn {

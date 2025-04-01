@@ -12,6 +12,11 @@
 	}
 }
 
+.hero-page header ul {
+	grid-template-columns: 1fr 1fr;
+	padding: 0 20%;
+}
+
 /* Similar to the shadow on the homepage, except this one is on the right. */
 .shadow-left {
 	position: absolute;
@@ -31,7 +36,7 @@
 	}
 }
 
-.hero-page img {
+.hero-page .hero-img {
 	object-position: 40% 50%;
 }
 
@@ -53,4 +58,36 @@
 	to {
 		width: 0;
 	}
+}
+
+/***************
+ * GRAND TOTAL *
+ ***************/
+
+#grand-total h2 {
+	margin: auto;
+	width: 30%;
+	text-align: center;
+	font-size: min(2.5rem, 10vw);
+	color: #fff;
+	filter: drop-shadow(5px 5px 5px #000);
+	border-bottom: 2px solid #fff;
+}
+
+@media screen and (width < 700px) {
+	#grand-total h2 {
+		width: 100%;
+	}
+}
+
+#grand-total p {
+	margin-top: 2rem;
+	text-align: center;
+	color: var(--mba-blue);
+	font-size: min(4rem, 10vw);
+	text-shadow: 5px 5px 5px #000;
+}
+
+#grand-total p::first-letter {
+	color: var(--saffron);
 }
