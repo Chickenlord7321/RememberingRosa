@@ -22,7 +22,6 @@
 
 	/* A linear gradient that matches the palette of the backdrop art by ozm0th */
 	--rosa-gradient: linear-gradient(120deg,
-						var(--oxford-blue),
 						var(--blue-green), 
 						var(--silver-lake-blue), 
 						var(--tangerine), 
@@ -98,7 +97,7 @@
 	background-color: rgba(0, 0, 0, 0.4);
 	/* Make the hero page's text container fill the remaining space left over by the ripple div */
 	flex: 1 1 0%;
-	font-size: min(2.2rem, 6vw);
+	font-size: min(2rem, 6vw);
 	text-align: center;
 	/* Add enough padding for the h1 to be clear of the hamburger menu so that it doesn't get covered up */
 	padding-top: calc(var(--nav-spacing) + var(--icon-size) + 1em);
@@ -108,7 +107,7 @@
 .hero-page header ul {
 	display: grid;
 	gap: 2em;
-	margin-top: 2em;
+	margin: 2em 1em 0;
 }
 
 .hero-page .hero-img {
@@ -148,7 +147,7 @@
 
 h1 {
 	font-size: max(4vw, 6vh);
-	padding: 0 5px;
+	padding: 0 10px;
 	margin-bottom: 2em;
 	/* Using inline here maintains the background across multiple lines */
 	display: inline;
@@ -174,7 +173,7 @@ body {
 }
 
 main {
-	padding: 8rem 15%;
+	padding: 8rem 20%;
 	background-image: url("../images/swimming-blissfully-by-ozm0th.webp");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -182,15 +181,25 @@ main {
 	background-position: 50% 80%;
 }
 
+/* Tablet size */
+@media screen and (width < 1200px) {
+	main {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+}
+
 main > h2 {
 	margin: auto;
 	width: 30%;
+	text-align: center;
 	font-size: 2.5rem;
 	color: #fff;
 	filter: drop-shadow(5px 5px 5px #000);
 	border-bottom: 2px solid #fff;
 }
 
+/* Mobile size */
 @media screen and (width < 700px) {
 	main > h2 {
 		width: 100%;
@@ -244,34 +253,37 @@ article > * {
 article > section, 
 article > div {
 	position: relative;		/* for children with absolute positioning */
-	/* background-color: #000; */
-	background-image: linear-gradient(to right bottom, #000000, #080606, #0f0c0a, #13110e, #151612);
+	background-color: #000;
+	/* background-image: linear-gradient(to right bottom, #000000, #080606, #0f0c0a, #13110e, #151612); */
  	/* background-image: linear-gradient(to bottom, #000000, #0d0c0d, #151516, #1c1c1d, #222324); */
 	/* background-image: linear-gradient(to right bottom, #000000, #122142); */
-	border-radius: 1em;
+	border-radius: 10px;
+	border: 2px solid #fff;
 	padding: min(10%, 2rem);
 
 	/* Font styling */
-	font-size: 1.2rem;
-	line-height: normal;
+	font-size: 1.3rem;
+	line-height: 1.3;
 }
 
-article section::before {
+.chapter-tag {
 	content: 'Chapter 1';
 	position: absolute;
 	top: -1.2em;
-	left: -1em;
-	padding: 0.5em;
-	font-size: 1.5rem;
-	background-color: #fff;
-	color: #000;
+	left: -1.2em;
+	padding: 0.3em 0.7em;
+	font-size: 1.4rem;
+	font-weight: 400;
+	background-color: #000;
+	border: 2px solid #fff;
+	color: #fff;
 	clip-path: polygon(
-		10px 0,
+		15px 0,
 		100% 0,
-		100% calc(100% - 10px),
-		calc(100% - 10px) 100%,
+		100% calc(100% - 15px),
+		calc(100% - 15px) 100%,
 		0 100%,
-		0 10px
+		0 15px
 	);
 }
 

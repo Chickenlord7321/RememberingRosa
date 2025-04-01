@@ -1,5 +1,5 @@
 .hero-page header {
-	min-width: 10em;
+	min-width: 14em;
 	max-width: calc(100vw - 100vmin);	/* calculate remaining width */
 	background-color: rgba(0, 0, 0, 0.7);
 }
@@ -14,7 +14,6 @@
 
 .hero-page header ul {
 	grid-template-columns: 1fr 1fr;
-	padding: 0 20%;
 }
 
 /* Similar to the shadow on the homepage, except this one is on the right. */
@@ -64,13 +63,24 @@
  * GRAND TOTAL *
  ***************/
 
-#grand-total h2 {
+#grand-total {
+	width: 50%;
 	margin: auto;
-	width: 30%;
+	border-radius: 10px;
+	border: 2px solid #fff;
+	padding: min(10%, 3rem);
+}
+
+@media screen and (width < 700px) {
+	#grand-total {
+		width: 100%;
+	}
+}
+
+#grand-total h2 {
 	text-align: center;
 	font-size: min(2.5rem, 10vw);
 	color: #fff;
-	filter: drop-shadow(5px 5px 5px #000);
 	border-bottom: 2px solid #fff;
 }
 
@@ -84,8 +94,7 @@
 	margin-top: 2rem;
 	text-align: center;
 	color: var(--mba-blue);
-	font-size: min(4rem, 10vw);
-	text-shadow: 5px 5px 5px #000;
+	font-size: max(4vw, 1.8rem);
 }
 
 #grand-total p::first-letter {

@@ -5,7 +5,16 @@ h1 {
 	margin-right: auto;
 }
 
-article li {
+
+/* We actually want the list styling back for this page, because it's supposed to look like
+	a list of external links. */
+article section ul {
+	list-style: circle;
+	list-style-position: outside;
+	margin: 0 1em;
+}
+
+article section li {
 	font-size: 1.5rem;
 	margin: 1em 0;
 }
