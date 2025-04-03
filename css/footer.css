@@ -48,7 +48,8 @@ footer a {
 	transition: all 0.3s;
 }
 
-footer a:hover {
+footer a:hover,
+footer a:active {
 	/* Defaults to Twitch colors, but we change the other buttons to have their own unique colors */
 	box-shadow: 4px 4px 0 2px #9146FF;
 	background-color: black;
@@ -56,9 +57,12 @@ footer a:hover {
 }
 
 /* Change colors for each button */
-a#yt:hover { box-shadow: 4px 4px 0 2px #FF0000; }
-a#mba:hover { box-shadow: 4px 4px 0 2px var(--mba-blue); }
-a#loc:hover { box-shadow: 4px 4px 0 2px #34A853; }
+a#yt:hover,
+a#yt:active { box-shadow: 4px 4px 0 2px #FF0000; }
+a#mba:hover,
+a#mba:active { box-shadow: 4px 4px 0 2px var(--mba-blue); }
+a#loc:hover, 
+a#mba:active { box-shadow: 4px 4px 0 2px #34A853; }
 
 /* Make the Font Awesome icons look more like their brand counterparts */
 a i { margin-right: 0.5em; }

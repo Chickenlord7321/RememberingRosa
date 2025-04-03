@@ -90,29 +90,36 @@ iframe {
 	top: 0;
 	left: 0;
 	z-index: 100;
-	padding-top: 50px;
 	width: 100%;
 	height: 100%;
 	overflow-y: scroll;	/* if needed */
 	background-color: rgba(0,0,0,0.9);
 }
 
-#modal > img {
-	margin: auto;
+/* Center the div that contains the img and caption  */
+#modal > div {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 	width: 80%;
 	max-width: max-content;
+}
+
+#modal-img {
+	margin: auto;
 	max-height: 95%;
 	object-fit: contain;
 }
 
-#modal #caption {
+#caption {
 	text-align: center;
 	color: #fff;
 	padding: 1em 0;
 }
 
-#modal > img,
-#modal #caption {
+#modal-img,
+#caption {
 	animation: zoom 0.4s ease-in;
 }
 
@@ -121,22 +128,23 @@ iframe {
 	to { transform:scale(1) }
 }
 
-#modal #close {
+#close {
 	position: absolute;
-	top: 0;
-	right: 5vw;
-
-	display: block;
+	top: 3vw;
+	right: 3vw;
+	z-index: 2;
 	text-decoration: none;
+	text-align: center;
 	color: #fff;
-	font-size: max(2.5rem, 4vw);
 	font-weight: 700;
+	font-size: max(2.5rem, 4vw);
 	transition: all 0.3s;
 }
-#modal #close:hover,
-#modal #close:focus {
+#close:hover,
+#close:active {
 	color: var(--mba-blue);
 }
+	
 
 
 /*****************************

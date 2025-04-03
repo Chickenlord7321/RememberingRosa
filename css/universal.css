@@ -75,7 +75,8 @@
 		left bottom;
 	transition: background-size 0.4s ease-in-out;
 }
-.fancy-link:hover {
+.fancy-link:hover,
+.fancy-link:active {
 	color: transparent;
 	background-size: 
 		0% var(--underline-size),
@@ -217,7 +218,8 @@ a {
 	color: var(--mba-blue);
 	transition: all 0.3s;
 }
-a:hover {
+a:hover,
+a:active {
 	color: var(--tangerine);
 }
 
