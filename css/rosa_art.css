@@ -1,3 +1,17 @@
+/* 2-column layout for art page links */
+header ul {
+	grid-template-columns: 1fr 1fr;
+}
+
+#contest-call-to-action {
+	font-size: 1.3rem;
+	/* Center */
+	width: 70%;
+	margin: auto;
+	/* Call to action should span both columns */
+	grid-column: 1 / span 2;
+}
+
 main > h2 {
 	margin-bottom: 4rem;
 }
@@ -8,22 +22,16 @@ main > h2 {
 	}
 }
 
-#contest-call-to-action {
-	font-size: 1.3rem;
-	width: 70%;
-	margin: auto;
-}
-
-/*****************
- * GALLERY RULES *
- *****************/
+/***********
+ * GALLERY *
+ ***********/
 
 :root {
-	--gallery-gap: 1.5rem; /* Gap between each img */
-	--gallery-num-cols: 4;
+	--gallery-gap: 1.5rem;	/* Gap between each img */
+	--gallery-num-cols: 4;	/* Number of columns in gallery */
 }
 
-/* For smol / mobile screens */
+/* For smol / mobile screens, change the number of columns */
 @media screen and (width < 1200px) {
 	:root {
 		--gallery-num-cols: 2;
@@ -35,6 +43,7 @@ main > h2 {
 	}
 }
 
+/* his gallery code is basically identical to the CSS Technique assignment I worked on */
 .gallery {
 	display: grid;
 	grid-template-columns: repeat(var(--gallery-num-cols), 1fr);
@@ -48,7 +57,7 @@ main > h2 {
 }
 
 .col > li {
-	position: relative;
+	position: relative;		/* for children */
 	border: 2px solid white;
 }
 
@@ -63,7 +72,7 @@ main > h2 {
 	width: 100%;
 	/* Effects */
 	opacity: 0;
-	transition: all 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
 }
 .col li:hover > .art-credit {
 	opacity: 1;
@@ -75,6 +84,7 @@ iframe {
 	width: 100%;
 }
 
+/* The underlines look kinda ugly in the galleries, so we remove them */
 .gallery a {
 	text-decoration: none;
 }
@@ -108,7 +118,7 @@ iframe {
 
 #modal-img {
 	margin: auto;
-	max-height: 95%;
+	max-height: 95%;	/* leaves a bit of space for the caption */
 	object-fit: contain;
 }
 
@@ -128,6 +138,7 @@ iframe {
 	to { transform:scale(1) }
 }
 
+/* The X button for closing the modal goes in the top right corner */
 #close {
 	position: absolute;
 	top: 3vw;
@@ -154,7 +165,13 @@ iframe {
  /* The original Perfect Squaring the Square is a 122 units. To make our web version 
 	responsive, we calculate the percentages of the width/height that each div should 
 	take up as a percentage of the original 112-unit base size. 
-*/
+
+	This CodePen I made might help to make it more clear what the code does, since it's a bit simpler:
+	https://codepen.io/Chickenlord7321/pen/ogNdLrq
+
+	There's also this video from Numberphile that explains how the Squaring the Square mathematical problem works: 
+	https://www.youtube.com/watch?v=NoRjwZomUK0
+ */
 :root {
 	--s50: calc(50 / 112 * 100%);
 	--s42: calc(42 / 112 * 100%);

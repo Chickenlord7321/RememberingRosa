@@ -1,4 +1,9 @@
-/*! add header comment to ALL PAGES */
+/*
+ * Author: Caleb Bronn
+ * Last Update: 6 Apr 2025
+
+ * This page contains styling that applies to every page across the website.
+ */
 
 @import url("./reset.css");
 @import url("./nav.css");
@@ -9,6 +14,7 @@
 	--ripple-color: #fff;
 	/* This is the same blue used by MBA on their website */
 	--mba-blue: #62b6f3;
+	/* These colors are sourced from the backdrop art by ozm0th */
 	--oxford-blue: #122142;
 	--blue-green: #3E93B5;
 	--silver-lake-blue: #5885C2;
@@ -33,10 +39,6 @@
 						var(--sgbus-green), 
 						var(--straw)
 					);
-	
-	/* Fancy links */
-	--fancy-link-bg-inactive: #fff;
-	--fancy-link-bg-active: var(--mba-blue);
 }
 
 /* More color classes for easily applying text/background color */
@@ -50,42 +52,59 @@
  * FANCY LINKS *
  ***************/
 
+/* Based on this CodePen I created: https://codepen.io/Chickenlord7321/pen/NPKEJLV
+
+Which is based on this CodePen: https://codepen.io/team/css-tricks/pen/gOXMgxR
+*/
 .fancy-link {
-	/*! remove this variable if I'm happy with this design */
-	--underline-size: 100%;
-	/* Reset stuff */
+	/* Reset default underlines */
 	text-decoration: none;
 
+	font-family: "Nunito", sans-serif;
+
+	/* Inline display allows the background image to wrap around with the content */
 	display: inline;
-	color: transparent;
-	-webkit-background-clip: text;
-	background-clip: text;
-	/* background-image: 
-		linear-gradient(to right, var(--fancy-link-bg-inactive), var(--fancy-link-bg-inactive)),
-		linear-gradient(to right, var(--fancy-link-bg-active), var(--fancy-link-bg-active)); */
+	/* 	The gradient underline is created by providing 2 backgrounds -- one white, the other a gradient. 
+		The first background takes up the entire width, while the second has no width at all. When the 
+		user hovers over the link, the backgrounds swap widths, creating a sliding effect.
+	*/
 	background-image: 
-		linear-gradient(to right, var(--fancy-link-bg-inactive), var(--fancy-link-bg-inactive)),
+		linear-gradient(to right, #fff, #fff),
 		var(--rosa-gradient);
 	background-repeat: no-repeat, no-repeat;
 	background-size: 
-		100% var(--underline-size),
-		0% var(--underline-size);
+		100% 100%,
+		0% 100%;
 	background-position: 
 		right bottom, 
 		left bottom;
 	transition: background-size 0.4s ease-in-out;
+
+	color: transparent;
+	/* Including the webkit version here because W3Schools says bakcground-clip: text is deprected, but 
+	MDN webdocs disagrees. This should cover almost every browser */
+	-webkit-background-clip: text;
+	background-clip: text;
 }
+
 .fancy-link:hover,
 .fancy-link:active {
 	color: transparent;
+	/* Switches out the white background for a colored background. */
 	background-size: 
-		0% var(--underline-size),
-		100% var(--underline-size);
+		0% 100%,
+		100% 100%;
 }
 
 /*************
  * HERO PAGE *
  *************/
+
+/* 
+The following rules contain everything that is common to every page. However, each individual page's 
+style sheet applies its own styling on top of this. This is why there are so many things like flex, grid, 
+or positioning that don't seem to have a purpose. There is a purpose, but it may be in a different style sheet.
+*/
 
 .hero-page {
 	display: flex;
@@ -98,17 +117,18 @@
 	background-color: rgba(0, 0, 0, 0.4);
 	/* Make the hero page's text container fill the remaining space left over by the ripple div */
 	flex: 1 1 0%;
+	/* Font size is responsive to screen size */
 	font-size: min(2rem, 6vw);
 	text-align: center;
 	/* Add enough padding for the h1 to be clear of the hamburger menu so that it doesn't get covered up */
 	padding-top: calc(var(--nav-spacing) + var(--icon-size) + 1em);
-	padding-bottom: 2rem;
 }
 
 .hero-page header ul {
+	/* Adds some spacing around header content */
 	display: grid;
 	gap: 2em;
-	margin: 2em 1em 0;
+	margin: 2em 1em;
 }
 
 .hero-page .hero-img {
@@ -147,14 +167,13 @@
  ***********/
 
 h1 {
+	/* Font size is responsive to screen size (these are just the numbers that work best) */
 	font-size: max(4vw, 6vh);
 	padding: 0 10px;
 	margin-bottom: 2em;
 	/* Using inline here maintains the background across multiple lines */
 	display: inline;
-	/* background: url("../images/swimming-blissfully-by-ozm0th.webp") no-repeat 70% 75%; */
 	background: var(--rosa-gradient) no-repeat center;
-	/* background-size: 150%; */
 	background-size: 100%;
 	color: transparent;
 	-webkit-background-clip: text;
@@ -175,6 +194,7 @@ body {
 
 main {
 	padding: 8rem 20%;
+	/* Main content has a cool background, created by ozm0th */
 	background-image: url("../images/swimming-blissfully-by-ozm0th.webp");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -182,7 +202,7 @@ main {
 	background-position: 50% 80%;
 }
 
-/* Tablet size */
+/* Tablet size padding */
 @media screen and (width < 1200px) {
 	main {
 		padding-left: 10%;
@@ -190,6 +210,8 @@ main {
 	}
 }
 
+/* Some pages have a title explaining what the content is about. 
+e.g. on the homepage, there's an h2 which says "Who Is Rosa?", because the content answers that question. */
 main > h2 {
 	margin: auto;
 	width: 30%;
@@ -206,13 +228,6 @@ main > h2 {
 		width: 100%;
 	}
 }
-
-/* TODO: maybe keep this? Feel like it conflicts with the h1 title */
-/* @media screen and (width < 700px) {
-	main {
-		background-image: url("../images/among-the-stars-by-potaattiss.webp");
-	}
-} */
 
 a {
 	color: var(--mba-blue);
@@ -238,15 +253,15 @@ article > * {
 }
 
 @media screen and (width >= 1000px) {
+	/* Layout on wide screens */
 	article {
 		grid-template-columns: 6fr 5fr;
 	}
-
 	article:nth-of-type(odd) {
 		grid-template-columns: 5fr 6fr;
 	}
 
-	/* Switches the order of the images and text */
+	/* Switches the order of the images and text so that the pattern becomes: text, img, text, img, etc... */
 	article:nth-of-type(even) > section { 
 		order: +1; 
 	}
@@ -254,13 +269,11 @@ article > * {
 
 article > section, 
 article > div {
-	position: relative;		/* for children with absolute positioning */
+	position: relative;		/* for .chapter-tag with absolute positioning */
 	background-color: #000;
-	/* background-image: linear-gradient(to right bottom, #000000, #080606, #0f0c0a, #13110e, #151612); */
- 	/* background-image: linear-gradient(to bottom, #000000, #0d0c0d, #151516, #1c1c1d, #222324); */
-	/* background-image: linear-gradient(to right bottom, #000000, #122142); */
 	border-radius: 10px;
 	border: 2px solid #fff;
+	/* Decreases the padding on mobile screens, but keeps it at 2rem on wide screens */
 	padding: min(10%, 2rem);
 
 	/* Font styling */
@@ -268,8 +281,15 @@ article > div {
 	line-height: 1.3;
 }
 
+/* Decrease font size on mobile screens to make the text fit better */
+@media screen and (width < 600px) {
+	article > section {
+		font-size: 1rem;
+	}
+}
+
+/* Tags are positioned in the top left corner of their <section> */
 .chapter-tag {
-	content: 'Chapter 1';
 	position: absolute;
 	top: -1.2em;
 	left: -1.2em;
@@ -290,17 +310,16 @@ article > div {
 }
 
 article h2 {
-	width: fit-content;
-	margin: 0 auto 1rem;
+	margin-bottom: 1rem;
 	font-size: 2rem;
 	text-align: center;
 	color: var(--mba-blue);
 }
 
+/* Images and videos are centered */
 article img {
 	display: block;
 	width: 100%;
-	height: auto;
 	margin: auto;
 }
 

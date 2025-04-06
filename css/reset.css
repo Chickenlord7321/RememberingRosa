@@ -1,3 +1,7 @@
+/* Fonts from Google Font API */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
 /*******************
  * RESET SYLESHEET *
  *******************/
@@ -25,16 +29,6 @@ iframe {
 	max-height: 100%;
 }
 
-/* Code that makes iframes automatically resize themselves. iframes are pretty tricky, 
-	since they don't behave like <img> or <video> elements. This StackOverflow, however,
-	explains the best way to resize them:
-	https://stackoverflow.com/questions/8117761/how-can-i-make-an-iframe-resizable 
-*/
-iframe {
-	resize: both;
-	overflow: auto;
-}
-
 /* <address> elements are italic by default */
 address {
 	font-style: normal;
@@ -54,7 +48,15 @@ address {
 	}
 }
 
-/* ! REMOVE WHEN I CHOOSE WHAT FONTS I WANT */
+
+/*********
+ * FONTS *
+ *********/
+
 body {
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-family: "Open Sans", serif;
+}
+
+h1, h2, h3, h4 {
+	font-family: "Nunito", sans-serif;
 }
