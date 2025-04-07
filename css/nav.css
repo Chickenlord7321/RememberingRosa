@@ -77,7 +77,7 @@ nav {
 	to the hamburger icon! */
 	--pad: calc(var(--icon-size) / 4);
 	padding: var(--pad);
-	font-size: calc(var(--icon-size) - 2 * var(--pad));
+	font-size: calc(var(--icon-size) - var(--pad)* 2);
 	line-height: 1;
 	text-align: center;
 
