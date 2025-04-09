@@ -1,3 +1,9 @@
+/* 
+ * Author: Caleb Bronn
+ * Last update: 8 Apr 2025
+ * This stylesheet the footer (identical on each page)
+*/
+
 /**********
  * FOOTER *
  **********/
@@ -7,9 +13,9 @@
 }
 
 footer {
-	padding: 40px 10%;
 	display: grid;
 	grid-template-columns: repeat(var(--num-cols), 1fr);
+	padding: 40px 10%;
 	gap: 0 10%;
 	text-align: center;
 	background-color: #122142;
@@ -25,6 +31,8 @@ footer {
 	}
 }
 
+/* We use margin here instead of gap because it's easier to override 
+margin, which we do on the <p> elements later. */
 footer > * {
 	margin-bottom: 2rem;
 }
@@ -35,6 +43,8 @@ footer h3 {
 	order: -1;
 }
 
+/* These <a> elements are styled like buttons, but they function as hyperlinks, 
+so that's why they are <a>'s instead of <button>'s */
 footer a {
 	text-decoration: none;
 	padding: 1rem;
@@ -106,10 +116,12 @@ h4 + p{
 }
 
 @media screen and (width < 850px) {
+	/* Since the buttons move to a single-column layout on mobile, we don't need their headings anymore */
 	footer h3 {
 		display: none;
 	}
 
+	/* In a single-column layout, the <h4>'s and <p>'s can return to their natural order */
 	h4 + p{
 		order: initial;
 	}

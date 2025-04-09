@@ -1,10 +1,20 @@
+/*
+ * Author: Caleb Bronn
+ * Last Update: 8 Apr 2025
+
+ * This page contains styling that applies to the DougDoug Charity Streams page
+ */
+
 .hero-page header {
 	min-width: 14em;
-	max-width: calc(100vw - 100vmin);	/* calculate remaining width */
+	/* Calculate remaining width because, on this page specifically, there is no 100vmin 
+	square element to take up the rest of the space. So we just pretend like there is :P */
+	max-width: calc(100vw - 100vmin);
 	background-color: rgba(0, 0, 0, 0.7);
 }
 
 @media screen and (orientation: portrait) {
+	/* Move header to be below the image in portrait view */
 	.hero-page header {
 		min-width: 0;
 		max-width: 100vw;
@@ -16,7 +26,7 @@
 	grid-template-columns: 1fr 1fr;
 }
 
-/* Similar to the shadow on the homepage, except this one is on the right. */
+/* Similar to the shadow on the homepage, except this one is on the left. */
 .shadow-left {
 	position: absolute;
 	top: 0;
@@ -35,10 +45,15 @@
 	}
 }
 
+/* Change background positioning so Rosa and Doug are always in the center */
 .hero-page .hero-img {
 	object-position: 40% 50%;
 }
 
+
+/* Pretty self-explanatory: the element takes up the entire screen, is placed 
+behind the <header>, and the animation decreases the width to 0 when the page loads,
+creating a sliding curtain effect */
 #slide-out-curtain {
 	position: absolute;
 	top: 0;
@@ -64,10 +79,11 @@
  ***************/
 
 #grand-total {
-	width: 50%;
+	width: 60%;
 	margin: auto;
 	border-radius: 10px;
 	border: 2px solid #fff;
+	/* Padding responds to screen size so that the text always fits */
 	padding: min(10%, 3rem);
 }
 
@@ -94,9 +110,11 @@
 	margin-top: 2rem;
 	text-align: center;
 	color: var(--mba-blue);
-	font-size: max(4vw, 1.8rem);
+	/* Again, these are just the magic numbers that work for this text */
+	font-size: max(4vw, 2rem);
 }
 
+/* Change dollar sign to a yellowish-orange color */
 #grand-total p::first-letter {
 	color: var(--saffron);
 }

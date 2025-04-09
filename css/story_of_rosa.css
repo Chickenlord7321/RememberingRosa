@@ -1,3 +1,10 @@
+/*
+ * Author: Caleb Bronn
+ * Last Update: 8 Apr 2025
+
+ * This page modifies and add to the styling from universal.css for the Story of Rosa page.
+ */
+
 /* Applies a shadow over the left side of the image to blend it with the blakc background color of the <body> */
 .shadow-right {
 	/* Remove img from document flow and position in top left corner, behind everything else */
@@ -19,6 +26,7 @@
 	}
 }
 
+/* Because Rosa is positioned on the far left in this image */
 .hero-img {
 	background-position: 20% 50%;
 }
@@ -41,17 +49,20 @@
 }
 
 #img-nav li:nth-of-type(even) {
+	/* Push to the left */
 	margin-right: auto;
 	transform: rotate(-10deg);
-		animation: imgSlideInEven 1.5s ease-out 0s;
+	animation: imgSlideInEven 1.5s ease-out 0s;
 }
 
 #img-nav li:nth-of-type(odd) {
+	/* Push to the right */
 	margin-left: auto;
 	transform: rotate(10deg);
-		animation: imgSlideInOdd 1.5s ease-out 0s;
+	animation: imgSlideInOdd 1.5s ease-out 0s;
 }
 
+/* Some fun animations that make the images come tumbling in when the page loads, like they're doing cartwheels */
 @keyframes imgSlideInEven {
 	from {
 		left: -100%;

@@ -1,3 +1,12 @@
+/* 
+ * Author: Caleb Bronn
+ * Last update: 8 Apr 2025
+ * This stylesheet  the hamburger menu.
+
+ * I also have a separate CodePen for this code:
+ * https://codepen.io/Chickenlord7321/pen/vEBazMm
+*/
+
 /**********
  * NAVBAR *
  **********/
@@ -18,6 +27,7 @@
 	--nav-radius: 1rem;
 }
 
+/* Controls the location of the menu */
 .nav-location {
 	top: 0;
 	right: 0;

@@ -32,6 +32,12 @@
 	background-color: rgba(0, 0, 0, 0.6);
 }
 
+/* This is kinda just a guessing game. When the screen becomes too small for the title 
+to fit on the left-hand side, we have to move it below the image. Finding that exact 
+breakpoint is, as far as I know, impossible with CSS. So I have chosen 1060px, because 
+that is slightly smaller than a tablet size, so it will still look good on tablets, but 
+big enough that the title won't become too tiny and sqished. I'm just hoping it works on 
+99% of screens.... */
 @media screen and (width < 1060px) {
 	.hero-page header {
 		order: +1;
@@ -43,6 +49,7 @@
 	height: 100vmin;
 	padding: 3vw;
 	display: grid;
+	/* We use a 1fr column in-between to give the videos a bit of overlap */
 	grid-template-columns: 2fr 1fr 2fr;
 	grid-template-rows: 1fr 1fr;
 	gap: 3vw 0;
@@ -58,6 +65,7 @@
 	animation: slideVideoIn 1.5s ease-out 0s;
 }
 
+/* Slides the videos in from beyond the left edge of the page */
 @keyframes slideVideoIn {
 	from {
 		margin-left: -100vw;
@@ -67,21 +75,10 @@
 	}
 }
 
-/* Delays the video from displaying until the slideVideoIn animation is ready to go */
+/* Delays the video from displaying until the slideVideoIn animation is ready to go. 
+This is necessary because otherwise the video will display, ruining the effect of the animation.
+*/
 @keyframes delay {
 	from { opacity: 0; }
 	to { opacity: 0; }
-}
-
-/* So, I'm having this issue on the MBA page that I cannot for the life of me understand.
-	When the page loads, there's a bizarre invisible box covering part of the drop-shadow
-	effect on the title. If you comment out the code below this, refresh the page, and look
-	at the 'y' in 'Monterey', you'll see what I mean.
-
-	AND FOR SOME FUCKIN REASON ADDING AN INVISIBLE BORDER GETS RID OF IT???????
-	
-	WHY??????
-*/
-.hero-page > * {
-	border: 1px solid transparent;
 }

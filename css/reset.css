@@ -1,3 +1,11 @@
+/* 
+ * Author: Caleb Bronn
+ * Last update: 8 Apr 2025
+ * This stylesheet resets default value applied by browsers, and 
+ * also sets limits on replaced element liks images. I have also 
+ * included font styling in this file.
+*/
+
 /* Fonts from Google Font API */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
@@ -35,7 +43,7 @@ address {
 }
 
 /* Minimum size for interactable elements on mobile screens */
-@media screen and (max-width: 800px) {
+@media screen and (width < 800px) {
 	a,
 	button,
 	audio,

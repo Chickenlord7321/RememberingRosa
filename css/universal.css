@@ -81,7 +81,7 @@ Which is based on this CodePen: https://codepen.io/team/css-tricks/pen/gOXMgxR
 	transition: background-size 0.4s ease-in-out;
 
 	color: transparent;
-	/* Including the webkit version here because W3Schools says bakcground-clip: text is deprected, but 
+	/* Including the webkit version here because W3Schools says background-clip: text is deprected, but 
 	MDN webdocs disagrees. This should cover almost every browser */
 	-webkit-background-clip: text;
 	background-clip: text;
@@ -101,14 +101,19 @@ Which is based on this CodePen: https://codepen.io/team/css-tricks/pen/gOXMgxR
  *************/
 
 /* 
-The following rules contain everything that is common to every page. However, each individual page's 
+The following rules contain everything that is common to every Hero Page. However, each individual page's 
 style sheet applies its own styling on top of this. This is why there are so many things like flex, grid, 
-or positioning that don't seem to have a purpose. There is a purpose, but it may be in a different style sheet.
+or positioning that don't seem to have a purpose. There is a purpose, but it may be located in a different 
+stylesheet. You can always finding any additional styling to the .hero-page near the top of each page's 
+stylesheet, so it shouldn't be hard to find. Also, Inspect(Q) is your friend when you want to see exactly 
+what rules are being applied.
 */
 
 .hero-page {
 	display: flex;
 	flex-flow: row wrap;
+	/* We make extensive use of 100vmin in the hero pages since it makes them naturally responsive to different
+	screen sizes. */
 	min-height: 100vmin;
 }
 
@@ -139,7 +144,8 @@ or positioning that don't seem to have a purpose. There is a purpose, but it may
 	it always fits */
 	height: 100vmin;
 	/* In case the screen is too small for the image, we use object-fit to maintain 
-	the image's aspect ratio, and object-position to make Rosa stay in the same location */
+	the image's aspect ratio, and object-position to make Rosa stay in the same location. 
+	This object-position prperty is sometimes overridden in other stylesheets. */
 	object-fit: cover;
 	object-position: 0 0;
 }
@@ -192,6 +198,16 @@ body {
 	color: #fff;
 }
 
+/* These colors stand out better against a black background */
+a {
+	color: var(--mba-blue);
+	transition: all 0.3s;
+}
+a:hover,
+a:active {
+	color: var(--tangerine);
+}
+
 main {
 	padding: 8rem 20%;
 	/* Main content has a cool background, created by ozm0th */
@@ -202,7 +218,7 @@ main {
 	background-position: 50% 80%;
 }
 
-/* Tablet size padding */
+/* Tablet padding */
 @media screen and (width < 1200px) {
 	main {
 		padding-left: 10%;
@@ -229,15 +245,6 @@ main > h2 {
 	}
 }
 
-a {
-	color: var(--mba-blue);
-	transition: all 0.3s;
-}
-a:hover,
-a:active {
-	color: var(--tangerine);
-}
-
 /************************************
  * ARTICLES WITH ALTERNATING LAYOUT *
  ************************************/
@@ -250,14 +257,14 @@ article {
 
 @media screen and (width >= 1000px) {
 	/* Layout on wide screens */
-	article {
+	article:nth-of-type(even) {
 		grid-template-columns: 6fr 5fr;
 	}
 	article:nth-of-type(odd) {
 		grid-template-columns: 5fr 6fr;
 	}
 
-	/* Switches the order of the images and text so that the pattern becomes: text, img, text, img, etc... */
+	/* Switches the order of the images and text so that the pattern becomes: text, img, img, text, etc... */
 	article:nth-of-type(even) > .descrip-container { 
 		order: +1; 
 	}

@@ -1,7 +1,12 @@
-/*! add header comment */
+/*
+ * Author: Caleb Bronn
+ * Last Update: 8 Apr 2025
+
+ * This page contains styling that applies to the homepage
+ */
 
 :root {
-	/* Animation/Transition speeds! */
+	/* Animation/Transition speeds */
 	--ripple-speed: 3s;
 }
 
@@ -9,8 +14,8 @@
  * ADD FADE-IN ANIMATION TO THE HAMBURGER MENU *
  ***********************************************/
 
-/*? On the homepage only, because we want the other pages to have a */
-/*? navigation menu that is immediately usable. */
+/* We fade-in the hamburger menu on the homepage only, because we want the other pages to 
+have a navigation menu that is immediately usable. */
 #hamburger {
 	animation: fadeIn 3s ease-in;
 }

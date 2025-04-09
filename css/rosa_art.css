@@ -65,11 +65,11 @@ main > h2 {
 	/* Position at the bottom */
 	position: absolute;
 	bottom: 0;
+	width: 100%;
 	/* Cosmetics */
 	padding: 10px;
 	background-color: rgba(0, 0, 0, 0.5);
 	color: #fff;
-	width: 100%;
 	/* Effects */
 	opacity: 0;
 	transition: opacity 0.3s ease-in-out;
@@ -139,10 +139,8 @@ iframe {
 }
 
 /* The X button for closing the modal goes in the top right corner */
-#close {
+.modal-button {
 	position: absolute;
-	top: 3vw;
-	right: 3vw;
 	z-index: 2;
 	text-decoration: none;
 	text-align: center;
@@ -151,11 +149,28 @@ iframe {
 	font-size: max(2.5rem, 4vw);
 	transition: all 0.3s;
 }
-#close:hover,
-#close:active {
+.modal-button:hover,
+.modal-button:active {
 	color: var(--mba-blue);
 }
 	
+#close {
+	top: 3vw;
+	right: 3vw;
+}
+
+/*! An attempt at making a slideshow. Still a WIP */
+/* #prev {
+	left: 3vw;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+#next {
+	right: 3vw;
+	top: 50%;
+	transform: translate(0, -50%);
+} */
 
 
 /*****************************
