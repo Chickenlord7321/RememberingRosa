@@ -1,3 +1,10 @@
+/*
+ * Author: Caleb Bronn
+ * Last Update: 13 Apr 2025
+
+ * This page contains styling that applies to the Rosa Art page, mainly the gallery and Squaring-the-Square thingie.
+ */
+
 /* 2-column layout for art page links */
 header ul {
 	grid-template-columns: 1fr 1fr;
@@ -68,7 +75,7 @@ main > h2 {
 	width: 100%;
 	/* Cosmetics */
 	padding: 10px;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.7);
 	color: #fff;
 	/* Effects */
 	opacity: 0;
@@ -160,7 +167,7 @@ iframe {
 }
 
 /*! An attempt at making a slideshow. Still a WIP */
-/* #prev {
+#prev {
 	left: 3vw;
 	top: 50%;
 	transform: translate(0, -50%);
@@ -170,7 +177,7 @@ iframe {
 	right: 3vw;
 	top: 50%;
 	transform: translate(0, -50%);
-} */
+}
 
 
 /*****************************

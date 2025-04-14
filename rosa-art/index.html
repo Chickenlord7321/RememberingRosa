@@ -171,9 +171,11 @@ Last Update: 6 Apr 2025
 <!-- This modal does not display until the user clicks on an image in either of the galleries -->
 <div id="modal">
 	<a id="close" class="modal-button" href="javascript:void(0);">&times;</a>
-	<!--! An attempt at making a slideshow. Incomplete -->
-	<!-- <a id="prev" class="modal-button" href="javascript:void(0);" onclick="goToPrev();">&lt;</a> -->
-	<!-- <a id="next" class="modal-button" href="javascript:void(0);" onclick="goToNext();">&gt;</a> -->
+	<!-- An attempt at making a slideshow. It works pretty well, except there's a singular 
+		iframe in the gallery that obviously 
+	 -->
+	<a id="prev" class="modal-button" href="javascript:void(0);" onclick="goToPrev();">&lt;</a>
+	<a id="next" class="modal-button" href="javascript:void(0);" onclick="goToNext();">&gt;</a>
 	<div>
 		<img id="modal-img" src="tbd" alt="tbd">
 		<p id="caption"></p>

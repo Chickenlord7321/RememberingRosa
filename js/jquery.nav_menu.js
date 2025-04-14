@@ -1,15 +1,10 @@
 /**
  * Author: Caleb Bronn
- * Last update: Mar 16 2025
+ * Last update: 10 Apr 2025
  * This jQuery script changes the icon of the hamburger menu when clicked, and also 
  * changes the border radius of the icon to make it blend with the opening/closing 
  * animation.
 */
-
-//! Attemps to retrieve the speed from the CSS - not working
-// let speed = $(":root")
-// let root = document.documentElement;
-// let speed = getComputedStyle(root).getPropertyValue('--nav-speed');
 
 // Exchange hamburger icon for X icon when checkbox is clicked (or vice-versa)
 // Called by #hambox
